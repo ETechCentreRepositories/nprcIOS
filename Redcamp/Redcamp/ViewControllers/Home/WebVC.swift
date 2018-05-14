@@ -1,28 +1,22 @@
 //
-//  LoginVC.swift
+//  WebVC.swift
 //  Redcamp
 //
-//  Created by Abhijit on 9/5/18.
+//  Created by Abhijit on 14/5/18.
 //  Copyright © 2018 Abhijit. All rights reserved.
 //
 
 import UIKit
+import WebKit
 
-class LoginVC: UIViewController {
+class WebVC: UIViewController {
 
-    @IBOutlet weak var btnFacebook: UIButton!
-    @IBOutlet weak var btnGoogle: UIButton!
-    @IBOutlet weak var btnEmail: UIButton!
-    @IBOutlet weak var btnLogin: UIButton!
+    @IBOutlet weak var wbView: WKWebView!
     
-    override func viewDidLoad()
-    {
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
-        
-        btnFacebook.layer.cornerRadius = 10
-        btnGoogle.layer.cornerRadius = 10
-        btnEmail.layer.cornerRadius = 10
-        btnLogin.layer.cornerRadius = 10
+
         // Do any additional setup after loading the view.
     }
 

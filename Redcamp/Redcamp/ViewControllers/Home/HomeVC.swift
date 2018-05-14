@@ -36,7 +36,7 @@ class HomeVC: UIViewController,ENSideMenuDelegate,UICollectionViewDelegate,UICol
     {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        layout.itemSize = CGSize(width: screenWidth/2, height: screenHeight/4)
+        layout.itemSize = CGSize(width: screenWidth/2, height: screenHeight/3.8)
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0
         colHome!.collectionViewLayout = layout
@@ -83,16 +83,16 @@ class HomeVC: UIViewController,ENSideMenuDelegate,UICollectionViewDelegate,UICol
             }
             if (indexPath.row == 1)
             {
-                homeCell.imgBackGround.image = UIImage(named: "Home_Programme")
+                homeCell.imgBackGround.image = UIImage(named: "Home_Discoery")
             }
             if (indexPath.row == 2)
             {
-                homeCell.imgBackGround.image = UIImage(named: "Home_Programme")
+                homeCell.imgBackGround.image = UIImage(named: "Home_FAQ")
                 
             }
             if (indexPath.row == 3)
             {
-                homeCell.imgBackGround.image = UIImage(named: "Home_Programme")
+                homeCell.imgBackGround.image = UIImage(named: "Home_Discoery")
             }
         }
         
@@ -126,6 +126,22 @@ class HomeVC: UIViewController,ENSideMenuDelegate,UICollectionViewDelegate,UICol
         }
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
+    {
+        if indexPath.row == 0
+        {
+            let pagingVC = self.storyboard?.instantiateViewController(withIdentifier: "ProgrammeVC") as! ProgrammeVC
+            
+            self.navigationController?.pushViewController(pagingVC, animated: true)
+        }
+        else
+        {
+            let webVC = self.storyboard?.instantiateViewController(withIdentifier: "WebVC") as! WebVC
+            self.navigationController?.pushViewController(webVC, animated: true)
+        }
+    }
+    
     
     // MARK: - ENSideMenu Delegate
     func sideMenuWillOpen() {

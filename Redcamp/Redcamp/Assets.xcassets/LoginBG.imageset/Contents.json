@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "LoginBGNew.png",
+      "filename" : "event-photofre-2.jpg",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "LoginBGNew@2x.png",
+      "filename" : "event-photofre-1.jpg",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "LoginBGNew@3x.png",
+      "filename" : "event-photofre.jpg",
       "scale" : "3x"
     }
   ],

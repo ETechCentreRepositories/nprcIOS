@@ -27,8 +27,11 @@ class SideMenuVC: UIViewController,UITableViewDelegate,UITableViewDataSource
     @IBOutlet weak var imgProfile: UIImageView!
     
     var selectedMenuItem : Int = 0
-    let arrSideMenuTitle = ["Home","Notifications","Transactions","Calender","About Us"]
-    let arrSideMenuIcons = ["Spartens@3x.png","Spartens@3x.png","Icon_Transactions","Icon_Calender","Icon_Settings"]
+    
+    let arrSideMenuTitle = ["Email","Phone","Date Of Birth"]
+    let arrSideMenuSubTitle = ["alincelee@gmail.com","+65 9999 8888","01 March 2010"]
+    
+    let arrSideMenuIcons = ["Spartens@3x.png"]
     
     let arrOthers        = ["Share","Invite"]
     
@@ -46,7 +49,7 @@ class SideMenuVC: UIViewController,UITableViewDelegate,UITableViewDataSource
         self.tblSideMenu.clearsContextBeforeDrawing = true
         tblSideMenu.selectRow(at: IndexPath(row: selectedMenuItem, section: 0), animated: false, scrollPosition: .middle)
         tblSideMenu.tableFooterView = UIView()
-        
+        tblSideMenu.backgroundColor = UIColor.darkGray
         imgProfile.layer.borderWidth = 0.1
         imgProfile.layer.masksToBounds = false
         imgProfile.layer.borderColor = UIColor.black.cgColor
@@ -76,21 +79,36 @@ class SideMenuVC: UIViewController,UITableViewDelegate,UITableViewDataSource
          destViewController = mainStoryboard.instantiateViewController(withIdentifier: "ProfileVC")
          sideMenuController()?.setContentViewController(destViewController)
     }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60.0
+    
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    {
+        return 44.0
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return arrSideMenuTitle.count     }
+        return arrSideMenuTitle.count + 1
+        
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-
+        if indexPath.row == 3
+        {
             let cell = tableView.dequeueReusableCell(withIdentifier: "SideMenuCell", for: indexPath) as! SideMenuCell
             cell.imgIcon.image = UIImage(named: "Spartens@3x.png")
-            cell.lblTitle.text = arrSideMenuTitle[indexPath.row]
+            cell.lblTitle.text = "Logout"
             return cell
-        
+        }
+        else
+        {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SideMenuCellText", for: indexPath) as! SideMenuCellText
+            
+            cell.lblTitle.text = arrSideMenuTitle[indexPath.row]
+            cell.lblSubTitle.text = arrSideMenuSubTitle[indexPath.row]
+            
+            return cell
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)

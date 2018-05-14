@@ -1,28 +1,21 @@
 //
-//  LoginVC.swift
+//  WelcomeVC.swift
 //  Redcamp
 //
-//  Created by Abhijit on 9/5/18.
+//  Created by Abhijit on 14/5/18.
 //  Copyright © 2018 Abhijit. All rights reserved.
 //
 
 import UIKit
 
-class LoginVC: UIViewController {
+class WelcomeVC: UIViewController {
 
-    @IBOutlet weak var btnFacebook: UIButton!
-    @IBOutlet weak var btnGoogle: UIButton!
-    @IBOutlet weak var btnEmail: UIButton!
-    @IBOutlet weak var btnLogin: UIButton!
-    
+    @IBOutlet weak var btnLetsgo: UIButton!
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
-        btnFacebook.layer.cornerRadius = 10
-        btnGoogle.layer.cornerRadius = 10
-        btnEmail.layer.cornerRadius = 10
-        btnLogin.layer.cornerRadius = 10
+
+        btnLetsgo.layer.cornerRadius = 10
         // Do any additional setup after loading the view.
     }
 
@@ -41,5 +34,9 @@ class LoginVC: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    @IBAction func performLetsGo(_ sender: Any)
+    {
+        
+    }
+    
 }

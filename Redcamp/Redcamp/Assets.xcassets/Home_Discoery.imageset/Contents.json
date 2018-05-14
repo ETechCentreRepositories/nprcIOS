@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "dis.png",
+      "filename" : "pathofdiscovery.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "dis@2x.png",
+      "filename" : "pathofdiscovery@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "dis@3x.png",
+      "filename" : "pathofdiscovery@3x.png",
       "scale" : "3x"
     }
   ],

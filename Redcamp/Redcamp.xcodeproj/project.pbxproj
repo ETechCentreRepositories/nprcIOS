@@ -23,6 +23,12 @@
 		7CBB722920A2F6B6001476E9 /* MyNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBB722820A2F6B4001476E9 /* MyNavigationController.swift */; };
 		7CC1761020A93D720074942C /* ProgrammeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC1760F20A93D710074942C /* ProgrammeVC.swift */; };
 		7CC1761220A9457B0074942C /* HomeColCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC1761120A9457B0074942C /* HomeColCell.swift */; };
+		7CC1761420A9763C0074942C /* SideMenuCellText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC1761320A9763C0074942C /* SideMenuCellText.swift */; };
+		7CC3CCA520A97C3000FB8612 /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC3CCA420A97C2F00FB8612 /* WelcomeVC.swift */; };
+		7CC3CCA720A9870900FB8612 /* LoginAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC3CCA620A9870900FB8612 /* LoginAction.swift */; };
+		7CC3CCA920A989AC00FB8612 /* WebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC3CCA820A989AC00FB8612 /* WebVC.swift */; };
+		7CC3CCAB20A9911400FB8612 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC3CCAA20A9911400FB8612 /* SignUpVC.swift */; };
+		7CC3CCAD20A995E600FB8612 /* ScanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC3CCAC20A995E600FB8612 /* ScanVC.swift */; };
 		8A152FEA230B8624D7B54CC7 /* Pods_Redcamp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE513F4BD1799C3CCCC0D810 /* Pods_Redcamp.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +53,12 @@
 		7CBB722820A2F6B4001476E9 /* MyNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyNavigationController.swift; sourceTree = "<group>"; };
 		7CC1760F20A93D710074942C /* ProgrammeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgrammeVC.swift; sourceTree = "<group>"; };
 		7CC1761120A9457B0074942C /* HomeColCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeColCell.swift; sourceTree = "<group>"; };
+		7CC1761320A9763C0074942C /* SideMenuCellText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuCellText.swift; sourceTree = "<group>"; };
+		7CC3CCA420A97C2F00FB8612 /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
+		7CC3CCA620A9870900FB8612 /* LoginAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAction.swift; sourceTree = "<group>"; };
+		7CC3CCA820A989AC00FB8612 /* WebVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebVC.swift; sourceTree = "<group>"; };
+		7CC3CCAA20A9911400FB8612 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		7CC3CCAC20A995E600FB8612 /* ScanVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanVC.swift; sourceTree = "<group>"; };
 		BE513F4BD1799C3CCCC0D810 /* Pods_Redcamp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Redcamp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -119,6 +131,7 @@
 		7CBB721220A29738001476E9 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				7CC3CCA320A97BDA00FB8612 /* Welcome */,
 				7CC1760E20A93D1F0074942C /* Programme */,
 				7CBB722520A2F00F001476E9 /* SideMenu */,
 				7CBB721620A2DEC0001476E9 /* Home */,
@@ -131,6 +144,9 @@
 			isa = PBXGroup;
 			children = (
 				7CBB721420A2976F001476E9 /* LoginVC.swift */,
+				7CC3CCA620A9870900FB8612 /* LoginAction.swift */,
+				7CC3CCAA20A9911400FB8612 /* SignUpVC.swift */,
+				7CC3CCAC20A995E600FB8612 /* ScanVC.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -139,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				7CBB721820A2DED8001476E9 /* HomeVC.swift */,
+				7CC3CCA820A989AC00FB8612 /* WebVC.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -149,6 +166,7 @@
 				7CBB722820A2F6B4001476E9 /* MyNavigationController.swift */,
 				7CBB722320A2EFF1001476E9 /* SideMenuCell.swift */,
 				7CC1761120A9457B0074942C /* HomeColCell.swift */,
+				7CC1761320A9763C0074942C /* SideMenuCellText.swift */,
 			);
 			path = "Custom Classes";
 			sourceTree = "<group>";
@@ -169,6 +187,14 @@
 			path = Programme;
 			sourceTree = "<group>";
 		};
+		7CC3CCA320A97BDA00FB8612 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				7CC3CCA420A97C2F00FB8612 /* WelcomeVC.swift */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -180,7 +206,7 @@
 				7CBB71F820A290EC001476E9 /* Sources */,
 				7CBB71F920A290EC001476E9 /* Frameworks */,
 				7CBB71FA20A290EC001476E9 /* Resources */,
-				ADD572239D0F1EEF6C599B2B /* [CP] Embed Pods Frameworks */,
+				824AB82EEEF2471AB01C1AEC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -243,7 +269,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		ADD572239D0F1EEF6C599B2B /* [CP] Embed Pods Frameworks */ = {
+		824AB82EEEF2471AB01C1AEC /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -286,15 +312,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CC3CCAB20A9911400FB8612 /* SignUpVC.swift in Sources */,
 				7CBB720220A290ED001476E9 /* ViewController.swift in Sources */,
 				7CBB722420A2EFF1001476E9 /* SideMenuCell.swift in Sources */,
+				7CC1761420A9763C0074942C /* SideMenuCellText.swift in Sources */,
 				7CBB722720A2F0E0001476E9 /* SideMenuVC.swift in Sources */,
 				7CBB721920A2DED8001476E9 /* HomeVC.swift in Sources */,
 				7CBB722920A2F6B6001476E9 /* MyNavigationController.swift in Sources */,
+				7CC3CCA920A989AC00FB8612 /* WebVC.swift in Sources */,
 				7CBB720020A290EC001476E9 /* AppDelegate.swift in Sources */,
 				7CBB721520A2976F001476E9 /* LoginVC.swift in Sources */,
 				7CC1761220A9457B0074942C /* HomeColCell.swift in Sources */,
+				7CC3CCAD20A995E600FB8612 /* ScanVC.swift in Sources */,
+				7CC3CCA520A97C3000FB8612 /* WelcomeVC.swift in Sources */,
 				7CC1761020A93D720074942C /* ProgrammeVC.swift in Sources */,
+				7CC3CCA720A9870900FB8612 /* LoginAction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
