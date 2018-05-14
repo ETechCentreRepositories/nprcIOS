@@ -704,6 +704,9 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                     <navigationItem key="navigationItem" title="SIGN UP" id="9nB-Kf-oes">
                         <barButtonItem key="leftBarButtonItem" image="BackArrow" id="Pwz-S4-FTM">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="backAction:" destination="jBy-OE-FrT" id="8ie-Lz-xXL"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <size key="freeformSize" width="375" height="667"/>
@@ -1243,7 +1246,7 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                                                 <constraint firstItem="aPa-vA-ltX" firstAttribute="leading" secondItem="jQL-rk-BD8" secondAttribute="leading" constant="15" id="nzI-s8-dwd"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.14509803921568626" green="0.14509803921568626" blue="0.15294117647058825" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="imgIcon" destination="aPa-vA-ltX" id="U6z-gI-wXJ"/>
                                             <outlet property="lblTitle" destination="6On-mL-Y3I" id="Hc0-H8-nup"/>

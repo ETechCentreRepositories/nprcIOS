@@ -97,4 +97,10 @@ class SignUpVC: UIViewController
     
     @IBAction func signUp(_ sender: Any) {
     }
+    
+    
+    @IBAction func backAction(_ sender: Any)
+    {
+        self.dismiss(animated:true, completion: nil)
+    }
 }
