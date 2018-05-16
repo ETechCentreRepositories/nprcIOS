@@ -21,6 +21,9 @@ extension UITextField
 class SignUpVC: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource
 {
     
+    var firstName = ""
+    var lastName = ""
+    var email_id = ""
     
 
     @IBOutlet weak var txtEmail: UITextField!
@@ -91,6 +94,16 @@ class SignUpVC: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPick
         self.setupViewResizerOnKeyboardShown()
         self.scrollSignUp.scrollsToTop = true
         self.removeAnimate()
+        
+        if !firstName.isEmpty{
+            txtFirstName.text = firstName
+        }
+        if !lastName.isEmpty{
+            txtLastName.text = lastName
+        }
+        if !email_id.isEmpty{
+            txtEmail.text = email_id
+        }
         
     }
     
@@ -181,6 +194,7 @@ class SignUpVC: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPick
     }
     
     @IBAction func signUp(_ sender: Any) {
+        
     }
     
     

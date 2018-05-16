@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FBSDKLoginKit
+import GoogleSignIn
 
 class LoginVC: UIViewController {
 
@@ -24,6 +26,10 @@ class LoginVC: UIViewController {
         btnEmail.layer.cornerRadius = 10
         btnLogin.layer.cornerRadius = 10
         // Do any additional setup after loading the view.
+        
+        btnFacebook.addTarget(self, action: #selector(facebookLogin), for: .touchUpInside)
+        //btnGoogle.addTarget(self, action: #selector(googleLogin), for: .touchUpInside)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,15 +37,52 @@ class LoginVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @objc func facebookLogin(){
+        FBSDKLoginManager().logIn(withReadPermissions: ["email","public_profile"], from: self)
+        { (Result, error) in
+            if error != nil{
+                print("Login Failed")
+                return
+            }
+            self.showDetails()
+        }
     }
-    */
+    
+    
+    func showDetails(){
+        FBSDKGraphRequest(graphPath: "/me", parameters: ["fields" : "name,  email " ]).start{
+            (connection, result , error ) in
+            if error != nil{
+                print("Failed get Details")
+                return
+            }
+            print(result)
+            let results : [String: String] = result as! [String: String]
+            let email = results["email"]!
+            var components = results["name"]!.components(separatedBy: " ")
+            var first_name = ""
+            var last_name = ""
+            if(components.count > 0)
+            {
+                first_name = components.removeFirst()
+                last_name = components.joined(separator: " ")
+            }
+            
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            let SignUpVController = storyBoard.instantiateViewController(withIdentifier: "SignUpVC") as! SignUpVC
+            SignUpVController.email_id = email
+            SignUpVController.firstName = first_name
+            SignUpVController.lastName = last_name
+            self.present(SignUpVController, animated:true, completion:nil)
+
+
+        }
+    }
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        print("User \(user)")
+    }
+    
+
 
 }

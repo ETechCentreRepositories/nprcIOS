@@ -64,9 +64,7 @@ class LoginAction: UIViewController,UITextFieldDelegate {
             
             let homeVC = self.storyboard?.instantiateViewController(withIdentifier: "MyNavigationController") as! MyNavigationController
             self.present(homeVC, animated: true, completion: nil)
-            
-          
-            
+ 
         }
     }
     

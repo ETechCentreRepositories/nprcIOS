@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		482A33C120AC6A2C00D6A21C /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 482A33BD20AC6A2B00D6A21C /* FBSDKLoginKit.framework */; };
+		482A33C220AC6A2C00D6A21C /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 482A33BE20AC6A2B00D6A21C /* FBSDKShareKit.framework */; };
+		482A33C320AC6A2C00D6A21C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 482A33BF20AC6A2B00D6A21C /* Bolts.framework */; };
+		482A33C420AC6A2C00D6A21C /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 482A33C020AC6A2C00D6A21C /* FBSDKCoreKit.framework */; };
 		7CBB720020A290EC001476E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBB71FF20A290EC001476E9 /* AppDelegate.swift */; };
 		7CBB720220A290ED001476E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBB720120A290ED001476E9 /* ViewController.swift */; };
 		7CBB720520A290ED001476E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CBB720320A290ED001476E9 /* Main.storyboard */; };
@@ -34,6 +38,11 @@
 
 /* Begin PBXFileReference section */
 		22A3B526BCEFF8CFD2ED6014 /* Pods-Redcamp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Redcamp.release.xcconfig"; path = "Pods/Target Support Files/Pods-Redcamp/Pods-Redcamp.release.xcconfig"; sourceTree = "<group>"; };
+		482A33BD20AC6A2B00D6A21C /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		482A33BE20AC6A2B00D6A21C /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		482A33BF20AC6A2B00D6A21C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		482A33C020AC6A2C00D6A21C /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		482A33C520AC703F00D6A21C /* Redcamp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Redcamp.entitlements; sourceTree = "<group>"; };
 		4FB139EAC243CDD236194503 /* Pods-Redcamp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Redcamp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Redcamp/Pods-Redcamp.debug.xcconfig"; sourceTree = "<group>"; };
 		7CBB71FC20A290EC001476E9 /* Redcamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Redcamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CBB71FF20A290EC001476E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -67,7 +76,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				482A33C420AC6A2C00D6A21C /* FBSDKCoreKit.framework in Frameworks */,
+				482A33C120AC6A2C00D6A21C /* FBSDKLoginKit.framework in Frameworks */,
 				8A152FEA230B8624D7B54CC7 /* Pods_Redcamp.framework in Frameworks */,
+				482A33C220AC6A2C00D6A21C /* FBSDKShareKit.framework in Frameworks */,
+				482A33C320AC6A2C00D6A21C /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +99,10 @@
 		4F17B53041577A5BEAFDF152 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				482A33BF20AC6A2B00D6A21C /* Bolts.framework */,
+				482A33C020AC6A2C00D6A21C /* FBSDKCoreKit.framework */,
+				482A33BD20AC6A2B00D6A21C /* FBSDKLoginKit.framework */,
+				482A33BE20AC6A2B00D6A21C /* FBSDKShareKit.framework */,
 				BE513F4BD1799C3CCCC0D810 /* Pods_Redcamp.framework */,
 			);
 			name = Frameworks;
@@ -112,6 +129,7 @@
 		7CBB71FE20A290EC001476E9 /* Redcamp */ = {
 			isa = PBXGroup;
 			children = (
+				482A33C520AC703F00D6A21C /* Redcamp.entitlements */,
 				7CBB722220A2EFDA001476E9 /* Custom Classes */,
 				7CBB721220A29738001476E9 /* ViewControllers */,
 				7CBB71FF20A290EC001476E9 /* AppDelegate.swift */,
@@ -207,6 +225,7 @@
 				7CBB71F920A290EC001476E9 /* Frameworks */,
 				7CBB71FA20A290EC001476E9 /* Resources */,
 				824AB82EEEF2471AB01C1AEC /* [CP] Embed Pods Frameworks */,
+				412C358BD592EE4D27ACAD04 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -230,6 +249,11 @@
 					7CBB71FB20A290EC001476E9 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -269,6 +293,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		412C358BD592EE4D27ACAD04 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Redcamp/Pods-Redcamp-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Redcamp/Pods-Redcamp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		824AB82EEEF2471AB01C1AEC /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -277,12 +319,24 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Redcamp/Pods-Redcamp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/ENSwiftSideMenu/ENSwiftSideMenu.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ENSwiftSideMenu.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -466,8 +520,13 @@
 			baseConfigurationReference = 4FB139EAC243CDD236194503 /* Pods-Redcamp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Redcamp/Redcamp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2X8GU4BVVX;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Redcamp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.etechnologycentre.Redcamp;
@@ -482,8 +541,13 @@
 			baseConfigurationReference = 22A3B526BCEFF8CFD2ED6014 /* Pods-Redcamp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Redcamp/Redcamp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2X8GU4BVVX;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Redcamp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.etechnologycentre.Redcamp;
