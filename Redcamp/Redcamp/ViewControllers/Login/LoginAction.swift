@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class LoginAction: UIViewController {
+class LoginAction: UIViewController,UITextFieldDelegate {
 
     @IBOutlet weak var btnLogin: UIButton!
     @IBOutlet weak var txtPassword: UITextField!
@@ -69,5 +69,28 @@ class LoginAction: UIViewController {
     @IBAction func backAction(_ sender: Any)
     {
         self.dismiss(animated:true, completion: nil)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    {
+        switch textField
+        {
+        case txtEmail:
+            txtPassword.becomeFirstResponder()
+            break
+        case txtPassword:
+             txtPassword.resignFirstResponder()
+            break
+        
+        default:
+            return true
+        }
+        return true
+    }
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool
+    {
+        //txtViewContent.setContentOffset(textField.bounds.origin, animated: true)
+        return true
     }
 }

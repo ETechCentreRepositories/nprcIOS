@@ -113,36 +113,10 @@ class SideMenuVC: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        if (indexPath.row == selectedMenuItem)
+        if (indexPath.row == 3)
         {
-            return
+            self.navigationController?.popToRootViewController(animated: true)
         }
-        
-        selectedMenuItem = indexPath.row
-        
-        //Present new view controller
-        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
-        var destViewController : UIViewController
-        switch (indexPath.row) {
-        case 0:
-            destViewController = mainStoryboard.instantiateViewController(withIdentifier: "HomeVC")
-            break
-        case 1:
-            destViewController = mainStoryboard.instantiateViewController(withIdentifier: "NotificationsVC")
-            break
-        case 2:
-            destViewController = mainStoryboard.instantiateViewController(withIdentifier: "TransactionVC")
-            break
-        case 3:
-            destViewController = mainStoryboard.instantiateViewController(withIdentifier: "CalenderVC")
-            break
-        default:
-            destViewController = mainStoryboard.instantiateViewController(withIdentifier: "SettingsVC")
-            break
-        }
-        sideMenuController()?.setContentViewController(destViewController)
-    
-        
     }
     
 }

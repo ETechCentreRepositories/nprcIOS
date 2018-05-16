@@ -138,6 +138,22 @@ class HomeVC: UIViewController,ENSideMenuDelegate,UICollectionViewDelegate,UICol
         else
         {
             let webVC = self.storyboard?.instantiateViewController(withIdentifier: "WebVC") as! WebVC
+            
+            switch indexPath.row
+            {
+            case 1:
+                webVC.currentURL = "https://www.np.edu.sg/Pages/diplomas.aspx"
+                break
+            case 2:
+                webVC.currentURL = "https://www.np.edu.sg/pages/tour.aspx"
+                break
+            case 3:
+                webVC.currentURL = "https://www.np.edu.sg/redcamp/pages/askredcamp.aspx"
+                break
+            default:
+                webVC.currentURL = "https://www.np.edu.sg/redcamp/pages/askredcamp.aspx"
+            }
+            
             self.navigationController?.pushViewController(webVC, animated: true)
         }
     }

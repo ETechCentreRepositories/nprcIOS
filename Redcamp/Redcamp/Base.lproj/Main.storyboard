@@ -1,15 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3j5-Y5-kBl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3j5-Y5-kBl">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Quicksand-Medium.ttf">
+            <string>Quicksand-Medium</string>
+        </array>
+        <array key="Quicksand-Regular.ttf">
+            <string>Quicksand-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--WelcomeVC-->
         <scene sceneID="cB0-FP-N8J">
@@ -308,7 +316,7 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                                 <color key="backgroundColor" white="0.0" alpha="0.29660744859999999" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7eu-QB-9l2">
-                                <rect key="frame" x="0.0" y="70" width="375" height="167"/>
+                                <rect key="frame" x="0.0" y="60" width="375" height="167"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoginHeader" translatesAutoresizingMaskIntoConstraints="NO" id="ffv-Fp-bvp">
                                         <rect key="frame" x="94" y="25" width="187.5" height="117"/>
@@ -322,8 +330,17 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                                     <constraint firstItem="ffv-Fp-bvp" firstAttribute="width" secondItem="7eu-QB-9l2" secondAttribute="width" multiplier="0.5" id="pxe-Xy-qQL"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOGIN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kej-jm-cDt">
+                                <rect key="frame" x="147" y="237" width="80" height="25.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="AbA-Td-dT6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="21"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tsb-Pi-PEH">
-                                <rect key="frame" x="0.0" y="293.5" width="375" height="217"/>
+                                <rect key="frame" x="0.0" y="267.5" width="375" height="217"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Kp-iA-g3o">
                                         <rect key="frame" x="38" y="15.5" width="300" height="35"/>
@@ -332,7 +349,13 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                                         </constraints>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="h0z-PK-wQ7" id="Nhm-Cd-Qbj"/>
+                                            <outlet property="pasteDelegate" destination="h0z-PK-wQ7" id="24t-Zj-wYc"/>
+                                            <outlet property="textDragDelegate" destination="h0z-PK-wQ7" id="ald-63-Bya"/>
+                                            <outlet property="textDropDelegate" destination="h0z-PK-wQ7" id="KTo-Ie-i7S"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Onr-bg-3Sk">
                                         <rect key="frame" x="37.5" y="160.5" width="300" height="35"/>
@@ -350,7 +373,13 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                                         <rect key="frame" x="37.5" y="70.5" width="300" height="35"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="h0z-PK-wQ7" id="exZ-zM-bGg"/>
+                                            <outlet property="pasteDelegate" destination="h0z-PK-wQ7" id="mLK-nB-XDn"/>
+                                            <outlet property="textDragDelegate" destination="h0z-PK-wQ7" id="boq-c5-bqY"/>
+                                            <outlet property="textDropDelegate" destination="h0z-PK-wQ7" id="hLo-Md-WG4"/>
+                                        </connections>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jV5-r6-q0D">
                                         <rect key="frame" x="39.5" y="115.5" width="165" height="35"/>
@@ -411,30 +440,21 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                                     <constraint firstItem="Onr-bg-3Sk" firstAttribute="top" secondItem="jV5-r6-q0D" secondAttribute="bottom" constant="10" id="ypt-z0-p9Y"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOGIN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kej-jm-cDt">
-                                <rect key="frame" x="147" y="258" width="80" height="25.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="AbA-Td-dT6"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="21"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="ix1-Mx-Q7d" secondAttribute="bottom" id="2ms-cp-w2E"/>
                             <constraint firstItem="ix1-Mx-Q7d" firstAttribute="leading" secondItem="Dld-FH-0nH" secondAttribute="leading" id="6zy-dl-iYJ"/>
-                            <constraint firstItem="Tsb-Pi-PEH" firstAttribute="top" secondItem="Kej-jm-cDt" secondAttribute="bottom" constant="10" id="83g-gb-TTn"/>
+                            <constraint firstItem="Tsb-Pi-PEH" firstAttribute="top" secondItem="Kej-jm-cDt" secondAttribute="bottom" constant="5" id="83g-gb-TTn"/>
                             <constraint firstItem="Tsb-Pi-PEH" firstAttribute="height" secondItem="7eu-QB-9l2" secondAttribute="height" multiplier="1.3" id="8te-9j-60t"/>
                             <constraint firstItem="Tsb-Pi-PEH" firstAttribute="trailing" secondItem="Dld-FH-0nH" secondAttribute="trailing" id="CT6-pQ-yao"/>
                             <constraint firstItem="ufm-Px-zKp" firstAttribute="top" secondItem="K38-A3-R8H" secondAttribute="top" id="DEb-pY-CfW"/>
-                            <constraint firstItem="Tsb-Pi-PEH" firstAttribute="centerY" secondItem="Dld-FH-0nH" secondAttribute="centerY" multiplier="1.1" id="Gsl-pC-XbQ"/>
                             <constraint firstItem="7eu-QB-9l2" firstAttribute="leading" secondItem="Dld-FH-0nH" secondAttribute="leading" id="GtO-cV-Yp2"/>
                             <constraint firstItem="ix1-Mx-Q7d" firstAttribute="top" secondItem="K38-A3-R8H" secondAttribute="top" id="MH0-8X-J2T"/>
                             <constraint firstItem="7eu-QB-9l2" firstAttribute="height" secondItem="ix1-Mx-Q7d" secondAttribute="height" multiplier="0.25" id="Pzk-fE-JZx"/>
+                            <constraint firstItem="Kej-jm-cDt" firstAttribute="top" secondItem="7eu-QB-9l2" secondAttribute="bottom" constant="10" id="VEi-V5-TIl"/>
                             <constraint firstItem="Kej-jm-cDt" firstAttribute="centerX" secondItem="7eu-QB-9l2" secondAttribute="centerX" id="aaz-Yn-4Ka"/>
-                            <constraint firstItem="7eu-QB-9l2" firstAttribute="top" secondItem="K38-A3-R8H" secondAttribute="top" constant="70" id="bWj-nW-ZdG"/>
+                            <constraint firstItem="7eu-QB-9l2" firstAttribute="top" secondItem="K38-A3-R8H" secondAttribute="top" constant="60" id="bWj-nW-ZdG"/>
                             <constraint firstItem="Tsb-Pi-PEH" firstAttribute="leading" secondItem="Dld-FH-0nH" secondAttribute="leading" id="mPW-Ql-gsb"/>
                             <constraint firstItem="ix1-Mx-Q7d" firstAttribute="trailing" secondItem="Dld-FH-0nH" secondAttribute="trailing" id="o4n-OM-V15"/>
                             <constraint firstItem="ufm-Px-zKp" firstAttribute="trailing" secondItem="Dld-FH-0nH" secondAttribute="trailing" id="sta-dW-qkf"/>
@@ -460,7 +480,7 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nqJ-wh-w4A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2417" y="808"/>
+            <point key="canvasLocation" x="-2254" y="808"/>
         </scene>
         <!--SIGN UP-->
         <scene sceneID="2UF-1f-VaB">
@@ -488,18 +508,24 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="veA-bd-Taq"/>
                                                 </constraints>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="jBy-OE-FrT" id="OAh-YF-vfP"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wu6-wF-sjN">
                                                 <rect key="frame" x="37.5" y="75" width="300" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="Kd4-Ef-QtO"/>
                                                 </constraints>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="jBy-OE-FrT" id="yrj-71-67F"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ed3-gD-Moy">
                                                 <rect key="frame" x="37.5" y="120" width="300" height="35"/>
@@ -508,7 +534,10 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="jBy-OE-FrT" id="Vel-Qt-9VR"/>
+                                                </connections>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XXR-mU-br4">
                                                 <rect key="frame" x="37.5" y="185" width="300" height="35"/>
@@ -525,54 +554,72 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="cfm-Nw-FEg"/>
                                                 </constraints>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="jBy-OE-FrT" id="fY5-A7-0bv"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="NRIC" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MfD-sf-2Jc">
                                                 <rect key="frame" x="37.5" y="285" width="300" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="IsT-JF-Swq"/>
                                                 </constraints>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="jBy-OE-FrT" id="6Ez-UB-Gk4"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Birth Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MQs-0q-cEF">
                                                 <rect key="frame" x="37.5" y="335" width="300" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="jiA-m4-WKY"/>
                                                 </constraints>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="jBy-OE-FrT" id="JNU-ot-lhW"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Mobile Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fIi-hq-a8s">
                                                 <rect key="frame" x="37" y="385" width="300" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="F9c-aS-Rbj"/>
                                                 </constraints>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="jBy-OE-FrT" id="ckd-5w-8Yg"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Secondary School" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xCm-Fg-lkm">
                                                 <rect key="frame" x="37" y="435" width="300" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="lk1-jC-26g"/>
                                                 </constraints>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="jBy-OE-FrT" id="45v-BM-SW2"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Dietry Requirements" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JGB-tf-Q1D">
                                                 <rect key="frame" x="37" y="485" width="300" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="h2d-3h-8en"/>
                                                 </constraints>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="jBy-OE-FrT" id="gSL-vm-OHO"/>
+                                                </connections>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2cE-Xd-GXl">
                                                 <rect key="frame" x="37" y="535" width="300" height="35"/>
@@ -673,7 +720,64 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                                     <constraint firstItem="tuZ-L8-Ccd" firstAttribute="leading" secondItem="B7n-BB-vz1" secondAttribute="leading" id="nA8-1r-71X"/>
                                     <constraint firstItem="tuZ-L8-Ccd" firstAttribute="top" secondItem="B7n-BB-vz1" secondAttribute="top" id="pLQ-lS-vna"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="jBy-OE-FrT" id="Llo-Tb-3oG"/>
+                                </connections>
                             </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sv8-R3-UTo">
+                                <rect key="frame" x="0.0" y="467" width="375" height="200"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VEN-bi-8AF">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0vY-0w-dxd">
+                                                <rect key="frame" x="321" y="5" width="46" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Save">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="savePickerValue:" destination="jBy-OE-FrT" eventType="touchUpInside" id="Vab-Ml-beF"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I6W-PB-FHU">
+                                                <rect key="frame" x="8" y="5" width="48" height="30"/>
+                                                <state key="normal" title="Cancel">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="cancelPickerSelection:" destination="jBy-OE-FrT" eventType="touchUpInside" id="AoS-Yp-NC9"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.90196078430000004" green="0.1647058824" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="B11-dK-LMq"/>
+                                            <constraint firstItem="I6W-PB-FHU" firstAttribute="centerY" secondItem="VEN-bi-8AF" secondAttribute="centerY" id="HY7-mY-H7c"/>
+                                            <constraint firstItem="I6W-PB-FHU" firstAttribute="leading" secondItem="VEN-bi-8AF" secondAttribute="leading" constant="8" id="r0F-1I-iIS"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="I6W-PB-FHU" secondAttribute="trailing" constant="20" symbolic="YES" id="trR-a7-UUT"/>
+                                        </constraints>
+                                    </view>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yGP-ai-0kR">
+                                        <rect key="frame" x="0.0" y="40" width="375" height="160"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="jBy-OE-FrT" id="f9I-tS-INe"/>
+                                            <outlet property="delegate" destination="jBy-OE-FrT" id="rHw-bz-pa2"/>
+                                        </connections>
+                                    </pickerView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="yGP-ai-0kR" firstAttribute="top" secondItem="VEN-bi-8AF" secondAttribute="bottom" id="8JH-7o-skf"/>
+                                    <constraint firstAttribute="bottom" secondItem="yGP-ai-0kR" secondAttribute="bottom" id="VTp-hV-y9c"/>
+                                    <constraint firstItem="yGP-ai-0kR" firstAttribute="leading" secondItem="sv8-R3-UTo" secondAttribute="leading" id="Wpe-7t-fHQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="yGP-ai-0kR" secondAttribute="trailing" id="d5F-Oq-arF"/>
+                                    <constraint firstItem="VEN-bi-8AF" firstAttribute="leading" secondItem="sv8-R3-UTo" secondAttribute="leading" id="jZ3-YP-nCZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="VEN-bi-8AF" secondAttribute="trailing" id="mpl-ht-4qm"/>
+                                    <constraint firstItem="yGP-ai-0kR" firstAttribute="top" secondItem="VEN-bi-8AF" secondAttribute="bottom" id="mtc-KD-1DC"/>
+                                    <constraint firstItem="VEN-bi-8AF" firstAttribute="top" secondItem="sv8-R3-UTo" secondAttribute="top" id="tdc-fA-aZA"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -684,8 +788,12 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                             <constraint firstItem="iRe-e7-iZE" firstAttribute="trailing" secondItem="ixr-sD-Du9" secondAttribute="trailing" id="BaC-jn-xeh"/>
                             <constraint firstAttribute="bottom" secondItem="lFQ-wG-XoR" secondAttribute="bottom" id="CA3-hq-PHd"/>
                             <constraint firstItem="lFQ-wG-XoR" firstAttribute="leading" secondItem="ixr-sD-Du9" secondAttribute="leading" id="EUt-ME-UCB"/>
+                            <constraint firstItem="sv8-R3-UTo" firstAttribute="trailing" secondItem="ixr-sD-Du9" secondAttribute="trailing" id="VZh-Bk-9cH"/>
                             <constraint firstItem="iRe-e7-iZE" firstAttribute="bottom" secondItem="ixr-sD-Du9" secondAttribute="bottom" id="YYm-W9-KU5"/>
+                            <constraint firstItem="sv8-R3-UTo" firstAttribute="bottom" secondItem="iRe-e7-iZE" secondAttribute="bottom" identifier="PickerBottom" id="YgY-9d-Pxm"/>
                             <constraint firstItem="B7n-BB-vz1" firstAttribute="bottom" secondItem="ixr-sD-Du9" secondAttribute="bottom" id="Zuj-IK-whH"/>
+                            <constraint firstItem="sv8-R3-UTo" firstAttribute="height" secondItem="kxC-Cg-XEY" secondAttribute="height" multiplier="0.3" id="cwP-U0-Bf7"/>
+                            <constraint firstItem="sv8-R3-UTo" firstAttribute="leading" secondItem="ixr-sD-Du9" secondAttribute="leading" id="fSR-LK-XD1"/>
                             <constraint firstItem="iRe-e7-iZE" firstAttribute="top" secondItem="kxC-Cg-XEY" secondAttribute="top" id="hEt-Jr-RVI"/>
                             <constraint firstItem="lFQ-wG-XoR" firstAttribute="trailing" secondItem="ixr-sD-Du9" secondAttribute="trailing" id="lVv-vI-Qz8"/>
                             <constraint firstItem="tuZ-L8-Ccd" firstAttribute="width" secondItem="kxC-Cg-XEY" secondAttribute="width" id="oUL-FX-b1d"/>
@@ -706,6 +814,8 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                     <connections>
                         <outlet property="btnScanID" destination="XXR-mU-br4" id="3rt-7n-qJn"/>
                         <outlet property="btnSignUp" destination="G3v-MC-P8O" id="saV-b7-sKo"/>
+                        <outlet property="constPickBottom" destination="YgY-9d-Pxm" id="20P-rD-JTG"/>
+                        <outlet property="scrollSignUp" destination="B7n-BB-vz1" id="GAb-wp-4Gs"/>
                         <outlet property="txtBirthDate" destination="MQs-0q-cEF" id="mNQ-gk-Cha"/>
                         <outlet property="txtConfirmPassword" destination="Ed3-gD-Moy" id="UDi-ne-Ars"/>
                         <outlet property="txtContact" destination="fIi-hq-a8s" id="vLm-Lh-aup"/>
@@ -719,7 +829,7 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LMU-2Q-4f6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1135" y="41"/>
+            <point key="canvasLocation" x="1133.5999999999999" y="40.929535232383813"/>
         </scene>
         <!--SCAN YOUR STUDENT EZ-->
         <scene sceneID="6ii-JL-Ywi">
@@ -949,7 +1059,7 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6jD-e4-j0s">
-                                <rect key="frame" x="0.0" y="50" width="375" height="167"/>
+                                <rect key="frame" x="0.0" y="70" width="375" height="167"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoginHeader" translatesAutoresizingMaskIntoConstraints="NO" id="Eg5-0d-XCR">
                                         <rect key="frame" x="94" y="25" width="187.5" height="117"/>
@@ -1016,7 +1126,7 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                             <constraint firstItem="SyH-gq-sNT" firstAttribute="centerX" secondItem="heN-8c-xFd" secondAttribute="centerX" id="CsU-cN-xM2"/>
                             <constraint firstItem="JFP-QB-jiJ" firstAttribute="bottom" secondItem="SyH-gq-sNT" secondAttribute="bottom" constant="20" id="FZl-Lu-oXM"/>
                             <constraint firstItem="6jD-e4-j0s" firstAttribute="trailing" secondItem="JFP-QB-jiJ" secondAttribute="trailing" id="NW2-ve-lan"/>
-                            <constraint firstItem="6jD-e4-j0s" firstAttribute="top" secondItem="cPS-Qz-a40" secondAttribute="top" constant="50" id="SrN-GO-QRG"/>
+                            <constraint firstItem="6jD-e4-j0s" firstAttribute="top" secondItem="cPS-Qz-a40" secondAttribute="top" constant="70" id="SrN-GO-QRG"/>
                             <constraint firstItem="6jD-e4-j0s" firstAttribute="leading" secondItem="JFP-QB-jiJ" secondAttribute="leading" id="hCt-oo-3DQ"/>
                             <constraint firstItem="SyH-gq-sNT" firstAttribute="top" secondItem="heN-8c-xFd" secondAttribute="bottom" constant="8" id="qak-7n-pet"/>
                             <constraint firstItem="6jD-e4-j0s" firstAttribute="height" secondItem="cPS-Qz-a40" secondAttribute="height" multiplier="0.25" id="rVc-pu-v8H"/>

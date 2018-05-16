@@ -13,10 +13,16 @@ class WebVC: UIViewController {
 
     @IBOutlet weak var wbView: WKWebView!
     
+    var currentURL = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+         let abouturl = URL(string: currentURL)
+        let aboutRequest = URLRequest(url: abouturl!)
+        wbView.load(aboutRequest)
+        
+        //add observer to get estimated progress value
+        self.wbView.addObserver(self, forKeyPath: "estimatedProgress", options: .new, context: nil);
         // Do any additional setup after loading the view.
     }
 
@@ -36,4 +42,10 @@ class WebVC: UIViewController {
     }
     */
 
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == "estimatedProgress" {
+            print(self.wbView.estimatedProgress);
+            // self.progressView.progress = Float(self.webView.estimatedProgress);
+        }
+    }
 }

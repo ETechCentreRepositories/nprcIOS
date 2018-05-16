@@ -93,15 +93,19 @@ class ProgrammeVC: UIViewController,UITableViewDelegate,UITableViewDataSource
     
      func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?
     {
-        if day == 1 {
+        if day == 1
+        {
             return "20 NOVEMBER TUESDAY"
-        }else if day == 2 {
+        }else if day == 2
+        {
             return "21 NOVEMBER WEDNESDAY"
-        }else {
+        }else
+        {
             return "22 NOVEMBER THURSDAY"
         }
         //return "20 NOVEMBER TUESDAY"
     }
+    
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Return the number of rows in the section.
         return arrScheduleDay.count
