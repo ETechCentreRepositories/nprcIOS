@@ -6,4 +6,5 @@ target 'Redcamp' do
   use_frameworks!
   # Pods for Redcamp
   pod 'ENSwiftSideMenu', :git => 'https://github.com/evnaz/ENSwiftSideMenu.git', :tag => '0.1.3'
+  pod 'Alamofire'
 end

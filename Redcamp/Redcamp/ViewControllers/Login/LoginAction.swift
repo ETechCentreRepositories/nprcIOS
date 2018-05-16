@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class LoginAction: UIViewController {
 
@@ -29,9 +30,9 @@ class LoginAction: UIViewController {
         txtEmail.layer.borderColor = UIColor.white.cgColor
         txtEmail.layer.borderWidth = 1.5
         
-        txtPassword.attributedPlaceholder = NSAttributedString(string: "Paasword",
+        txtPassword.attributedPlaceholder = NSAttributedString(string: " Password",
                                                               attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
-        txtEmail.attributedPlaceholder = NSAttributedString(string: "Email",
+        txtEmail.attributedPlaceholder = NSAttributedString(string: " Email",
                                                                attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
         
         
@@ -41,7 +42,20 @@ class LoginAction: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func Login(_ sender: UIButton) {
+        let parameters: Parameters=[
+            "email":"bryanlowsk@gmail.com",//txtEmail.text!,
+            "password":"Bryan987"//txtPassword.text!
+        ]
+        let URL_USER_REGISTER = "http://bryanlowsk.com/RedCamp/API/login.php"
+        Alamofire.request(URL_USER_REGISTER, method: .post, parameters: parameters).responseJSON
+        {
+                response in
+                //printing response
+                print(" URL LOGIN RESPONSE \(response)")
+        }
+    }
+    
     /*
     // MARK: - Navigation
 
