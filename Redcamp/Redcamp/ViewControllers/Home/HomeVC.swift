@@ -23,7 +23,8 @@ class HomeVC: UIViewController,ENSideMenuDelegate,UICollectionViewDelegate,UICol
     var screenWidth: CGFloat!
     var screenHeight: CGFloat!
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         self.sideMenuController()?.sideMenu?.delegate = self
         screenSize = UIScreen.main.bounds
@@ -65,6 +66,7 @@ class HomeVC: UIViewController,ENSideMenuDelegate,UICollectionViewDelegate,UICol
     {
         return 4
     }
+    
     /* func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
      {
      let size = CGSize(width: collectionView.bounds.size.width/3 - 10, height: collectionView.bounds.size.height/3 - 10)
@@ -162,6 +164,7 @@ class HomeVC: UIViewController,ENSideMenuDelegate,UICollectionViewDelegate,UICol
     // MARK: - ENSideMenu Delegate
     func sideMenuWillOpen() {
         print("sideMenuWillOpen")
+        
     }
     
     func sideMenuWillClose() {

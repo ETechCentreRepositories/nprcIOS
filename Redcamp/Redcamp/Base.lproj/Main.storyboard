@@ -366,7 +366,6 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                                         </state>
                                         <connections>
                                             <action selector="Login:" destination="h0z-PK-wQ7" eventType="touchUpInside" id="36d-OB-jPb"/>
-                                            <segue destination="N2f-Rv-WDC" kind="show" id="qwT-Zr-3AO"/>
                                         </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vuy-hf-mdJ">
@@ -1299,7 +1298,7 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="alicelee@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EFY-h8-GnM">
                                                     <rect key="frame" x="15" y="25" width="345" height="14"/>
                                                     <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="12"/>
-                                                    <color key="textColor" red="1" green="0.18823529410000001" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.90196078430000004" green="0.1647058824" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>

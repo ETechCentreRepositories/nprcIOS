@@ -29,7 +29,7 @@ class SideMenuVC: UIViewController,UITableViewDelegate,UITableViewDataSource
     var selectedMenuItem : Int = 0
     
     let arrSideMenuTitle = ["Email","Phone","Date Of Birth"]
-    let arrSideMenuSubTitle = ["alincelee@gmail.com","+65 9999 8888","01 March 2010"]
+    var arrSideMenuSubTitle = ["alincelee@gmail.com","+65 9999 8888","01 March 2010"]
     
     let arrSideMenuIcons = ["Spartens@3x.png"]
     
@@ -55,8 +55,32 @@ class SideMenuVC: UIViewController,UITableViewDelegate,UITableViewDataSource
         imgProfile.layer.borderColor = UIColor.black.cgColor
         imgProfile.layer.cornerRadius = imgProfile.frame.height/2
         imgProfile.clipsToBounds = true
+        
+        self.arrSideMenuSubTitle.removeAll()
+        
+        if let name = UserDefaults.standard.string(forKey: "name")
+        {
+             self.arrSideMenuSubTitle.append(name)
+        }
+        if let email = UserDefaults.standard.string(forKey: "email")
+        {
+            self.arrSideMenuSubTitle.append(email)
+        }
+        if let dob = UserDefaults.standard.string(forKey: "dob")
+        {
+            self.arrSideMenuSubTitle.append(dob)
+        }
+        
+        if arrSideMenuSubTitle.count < 3
+        {
+            arrSideMenuSubTitle = ["","",""]
+        }
+        self.tblSideMenu.reloadData()
+        
     }
-    override func didReceiveMemoryWarning() {
+    
+    override func didReceiveMemoryWarning()
+    {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }

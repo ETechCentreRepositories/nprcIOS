@@ -24,6 +24,7 @@ class MyNavigationController: ENSideMenuNavigationController
             //sideMenu?.allowPanGesture = false
             // make navigation bar showing over side menu
             view.bringSubview(toFront: navigationBar)
+            
         }
         
         
