@@ -66,7 +66,6 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                                 </state>
                                 <connections>
                                     <action selector="performLetsGo:" destination="3j5-Y5-kBl" eventType="touchUpInside" id="Y5L-HL-gCX"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="om6-Kn-GJw"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -161,7 +160,7 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="NzE-er-vgI" kind="show" id="csZ-ox-T38"/>
+                                            <action selector="SignUpEmail:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8n1-r7-YLl"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -221,7 +220,7 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="2xy-4g-0Kp" kind="show" id="pIp-Tp-k8n"/>
+                                    <action selector="Login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XWU-Im-fZg"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5hj-xe-Ikj">
@@ -313,7 +312,23 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ufm-Px-zKp">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yng-Y5-Kcg">
+                                        <rect key="frame" x="19" y="25" width="36" height="36"/>
+                                        <state key="normal" image="BackArrow">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="backAction:" destination="h0z-PK-wQ7" eventType="touchUpInside" id="4iZ-NZ-KjC"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.29660744859999999" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Yng-Y5-Kcg" firstAttribute="top" secondItem="ufm-Px-zKp" secondAttribute="top" constant="25" id="5oK-hq-Zae"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Yng-Y5-Kcg" secondAttribute="trailing" constant="20" symbolic="YES" id="FdT-Qz-rDl"/>
+                                    <constraint firstItem="Yng-Y5-Kcg" firstAttribute="leading" secondItem="ufm-Px-zKp" secondAttribute="leading" constant="19" id="HkB-N8-iog"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7eu-QB-9l2">
                                 <rect key="frame" x="0.0" y="60" width="375" height="167"/>
@@ -349,7 +364,7 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                                         </constraints>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="email"/>
                                         <connections>
                                             <outlet property="delegate" destination="h0z-PK-wQ7" id="Nhm-Cd-Qbj"/>
                                             <outlet property="pasteDelegate" destination="h0z-PK-wQ7" id="24t-Zj-wYc"/>
@@ -372,7 +387,7 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                                         <rect key="frame" x="37.5" y="70.5" width="300" height="35"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                         <connections>
                                             <outlet property="delegate" destination="h0z-PK-wQ7" id="exZ-zM-bGg"/>
                                             <outlet property="pasteDelegate" destination="h0z-PK-wQ7" id="mLK-nB-XDn"/>
@@ -380,35 +395,8 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                                             <outlet property="textDropDelegate" destination="h0z-PK-wQ7" id="hLo-Md-WG4"/>
                                         </connections>
                                     </textField>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jV5-r6-q0D">
-                                        <rect key="frame" x="39.5" y="115.5" width="165" height="35"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wcO-ex-aoE">
-                                                <rect key="frame" x="2" y="6" width="24" height="24"/>
-                                                <color key="backgroundColor" red="0.90196078430000004" green="0.1647058824" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="24" id="HN7-Tj-hIi"/>
-                                                    <constraint firstAttribute="width" constant="24" id="hZV-aB-M6X"/>
-                                                </constraints>
-                                            </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rememeber Me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I2X-w0-uhw">
-                                                <rect key="frame" x="31" y="9.5" width="95.5" height="16"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstItem="wcO-ex-aoE" firstAttribute="centerY" secondItem="jV5-r6-q0D" secondAttribute="centerY" id="0n6-PP-KuM"/>
-                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="I2X-w0-uhw" secondAttribute="trailing" constant="20" symbolic="YES" id="LFH-DY-xJt"/>
-                                            <constraint firstItem="I2X-w0-uhw" firstAttribute="centerY" secondItem="wcO-ex-aoE" secondAttribute="centerY" id="Yha-aI-ZQ7"/>
-                                            <constraint firstItem="I2X-w0-uhw" firstAttribute="leading" secondItem="wcO-ex-aoE" secondAttribute="trailing" constant="5" id="vko-Uc-4cI"/>
-                                            <constraint firstItem="wcO-ex-aoE" firstAttribute="leading" secondItem="jV5-r6-q0D" secondAttribute="leading" constant="2" id="zoN-Jc-s14"/>
-                                        </constraints>
-                                    </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vJb-bH-b2j">
-                                        <rect key="frame" x="204.5" y="115.5" width="133" height="35"/>
+                                        <rect key="frame" x="236.5" y="115.5" width="101" height="35"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <state key="normal" title="Forget Password?">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -420,23 +408,18 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                                     <constraint firstItem="vuy-hf-mdJ" firstAttribute="top" secondItem="3Kp-iA-g3o" secondAttribute="bottom" constant="20" id="4hs-eX-1Cj"/>
                                     <constraint firstItem="vuy-hf-mdJ" firstAttribute="width" secondItem="3Kp-iA-g3o" secondAttribute="width" id="5LW-8k-a0A"/>
                                     <constraint firstItem="3Kp-iA-g3o" firstAttribute="centerX" secondItem="Tsb-Pi-PEH" secondAttribute="centerX" id="6C0-5r-4NI"/>
-                                    <constraint firstItem="vJb-bH-b2j" firstAttribute="leading" secondItem="jV5-r6-q0D" secondAttribute="trailing" id="6E2-kn-3Mp"/>
+                                    <constraint firstItem="Onr-bg-3Sk" firstAttribute="top" secondItem="vJb-bH-b2j" secondAttribute="bottom" constant="10" id="7QX-uD-iPN"/>
                                     <constraint firstItem="vJb-bH-b2j" firstAttribute="top" secondItem="vuy-hf-mdJ" secondAttribute="bottom" constant="10" id="KMU-9g-uAk"/>
                                     <constraint firstItem="vuy-hf-mdJ" firstAttribute="centerX" secondItem="3Kp-iA-g3o" secondAttribute="centerX" id="Oba-Qv-noq"/>
                                     <constraint firstItem="vuy-hf-mdJ" firstAttribute="height" secondItem="3Kp-iA-g3o" secondAttribute="height" id="Tmy-oe-iEG"/>
                                     <constraint firstItem="Onr-bg-3Sk" firstAttribute="width" secondItem="vuy-hf-mdJ" secondAttribute="width" id="UeZ-ep-s6G"/>
                                     <constraint firstItem="vJb-bH-b2j" firstAttribute="trailing" secondItem="vuy-hf-mdJ" secondAttribute="trailing" id="Vbo-bX-oq7"/>
                                     <constraint firstItem="3Kp-iA-g3o" firstAttribute="width" secondItem="Tsb-Pi-PEH" secondAttribute="width" multiplier="0.8" id="Ws7-TE-A8H"/>
-                                    <constraint firstItem="jV5-r6-q0D" firstAttribute="height" secondItem="vuy-hf-mdJ" secondAttribute="height" id="c0l-CN-exf"/>
                                     <constraint firstItem="vJb-bH-b2j" firstAttribute="height" secondItem="vuy-hf-mdJ" secondAttribute="height" id="hcL-mg-8Oa"/>
-                                    <constraint firstItem="jV5-r6-q0D" firstAttribute="centerX" secondItem="Tsb-Pi-PEH" secondAttribute="centerX" multiplier="0.65" id="iy7-5Q-beN"/>
-                                    <constraint firstItem="jV5-r6-q0D" firstAttribute="width" secondItem="vuy-hf-mdJ" secondAttribute="width" multiplier="0.55" id="uRX-en-qDr"/>
                                     <constraint firstItem="Onr-bg-3Sk" firstAttribute="height" secondItem="vuy-hf-mdJ" secondAttribute="height" id="uq1-wh-ZmN"/>
                                     <constraint firstItem="3Kp-iA-g3o" firstAttribute="centerY" secondItem="Tsb-Pi-PEH" secondAttribute="centerY" multiplier="0.3" id="vuQ-gc-JjN"/>
                                     <constraint firstItem="Onr-bg-3Sk" firstAttribute="centerX" secondItem="Tsb-Pi-PEH" secondAttribute="centerX" id="wDZ-zp-sCU"/>
-                                    <constraint firstItem="jV5-r6-q0D" firstAttribute="top" secondItem="vuy-hf-mdJ" secondAttribute="bottom" constant="10" id="y1p-A4-JpB"/>
                                     <constraint firstItem="vJb-bH-b2j" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Tsb-Pi-PEH" secondAttribute="leading" constant="20" symbolic="YES" id="yIN-rk-fhO"/>
-                                    <constraint firstItem="Onr-bg-3Sk" firstAttribute="top" secondItem="jV5-r6-q0D" secondAttribute="bottom" constant="10" id="ypt-z0-p9Y"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -466,9 +449,6 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                     <navigationItem key="navigationItem" title="Login" id="8S4-uv-YYK">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="BackArrow" id="qE4-NH-rff">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <action selector="backAction:" destination="h0z-PK-wQ7" id="XnB-8N-w5B"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -496,6 +476,22 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.29660744859999999" colorSpace="calibratedWhite"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SIGN UP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="odx-Kk-bJl">
+                                <rect key="frame" x="0.0" y="25" width="375" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="21"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sSh-Sf-Qih">
+                                <rect key="frame" x="8" y="25" width="36" height="36"/>
+                                <state key="normal" image="BackArrow">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backAction:" destination="jBy-OE-FrT" eventType="touchUpInside" id="c8P-Th-LX0"/>
+                                    <action selector="backAction:" destination="h0z-PK-wQ7" eventType="touchUpInside" id="nhs-5j-6Ds"/>
+                                </connections>
+                            </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B7n-BB-vz1">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
@@ -509,7 +505,7 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                                                 </constraints>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="email"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="jBy-OE-FrT" id="OAh-YF-vfP"/>
                                                 </connections>
@@ -521,7 +517,7 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                                                 </constraints>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES" textContentType="password"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="jBy-OE-FrT" id="yrj-71-67F"/>
                                                 </connections>
@@ -531,9 +527,9 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="VNI-GA-kBS"/>
                                                 </constraints>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES" textContentType="password"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="jBy-OE-FrT" id="Vel-Qt-9VR"/>
                                                 </connections>
@@ -555,7 +551,7 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                                                 </constraints>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="name"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="jBy-OE-FrT" id="fY5-A7-0bv"/>
                                                 </connections>
@@ -567,7 +563,7 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                                                 </constraints>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" textContentType="name"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="jBy-OE-FrT" id="6Ez-UB-Gk4"/>
                                                 </connections>
@@ -780,6 +776,8 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="odx-Kk-bJl" firstAttribute="top" secondItem="ixr-sD-Du9" secondAttribute="top" constant="5" id="0Cu-Zi-E4I"/>
+                            <constraint firstItem="odx-Kk-bJl" firstAttribute="width" secondItem="iRe-e7-iZE" secondAttribute="width" id="2kb-A2-OiG"/>
                             <constraint firstItem="iRe-e7-iZE" firstAttribute="leading" secondItem="ixr-sD-Du9" secondAttribute="leading" id="4Sz-95-mft"/>
                             <constraint firstItem="B7n-BB-vz1" firstAttribute="trailing" secondItem="ixr-sD-Du9" secondAttribute="trailing" id="59T-jm-Hae"/>
                             <constraint firstItem="B7n-BB-vz1" firstAttribute="leading" secondItem="ixr-sD-Du9" secondAttribute="leading" id="7g2-xy-5kf"/>
@@ -787,16 +785,20 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                             <constraint firstItem="iRe-e7-iZE" firstAttribute="trailing" secondItem="ixr-sD-Du9" secondAttribute="trailing" id="BaC-jn-xeh"/>
                             <constraint firstAttribute="bottom" secondItem="lFQ-wG-XoR" secondAttribute="bottom" id="CA3-hq-PHd"/>
                             <constraint firstItem="lFQ-wG-XoR" firstAttribute="leading" secondItem="ixr-sD-Du9" secondAttribute="leading" id="EUt-ME-UCB"/>
+                            <constraint firstItem="odx-Kk-bJl" firstAttribute="centerY" secondItem="sSh-Sf-Qih" secondAttribute="centerY" id="Kb4-00-o8S"/>
+                            <constraint firstItem="sSh-Sf-Qih" firstAttribute="leading" secondItem="ixr-sD-Du9" secondAttribute="leading" constant="8" id="S7t-TV-uY0"/>
                             <constraint firstItem="sv8-R3-UTo" firstAttribute="trailing" secondItem="ixr-sD-Du9" secondAttribute="trailing" id="VZh-Bk-9cH"/>
                             <constraint firstItem="iRe-e7-iZE" firstAttribute="bottom" secondItem="ixr-sD-Du9" secondAttribute="bottom" id="YYm-W9-KU5"/>
                             <constraint firstItem="sv8-R3-UTo" firstAttribute="bottom" secondItem="iRe-e7-iZE" secondAttribute="bottom" identifier="PickerBottom" id="YgY-9d-Pxm"/>
                             <constraint firstItem="B7n-BB-vz1" firstAttribute="bottom" secondItem="ixr-sD-Du9" secondAttribute="bottom" id="Zuj-IK-whH"/>
                             <constraint firstItem="sv8-R3-UTo" firstAttribute="height" secondItem="kxC-Cg-XEY" secondAttribute="height" multiplier="0.3" id="cwP-U0-Bf7"/>
+                            <constraint firstItem="sSh-Sf-Qih" firstAttribute="top" secondItem="ixr-sD-Du9" secondAttribute="top" constant="5" id="eHN-gs-Pig"/>
                             <constraint firstItem="sv8-R3-UTo" firstAttribute="leading" secondItem="ixr-sD-Du9" secondAttribute="leading" id="fSR-LK-XD1"/>
                             <constraint firstItem="iRe-e7-iZE" firstAttribute="top" secondItem="kxC-Cg-XEY" secondAttribute="top" id="hEt-Jr-RVI"/>
                             <constraint firstItem="lFQ-wG-XoR" firstAttribute="trailing" secondItem="ixr-sD-Du9" secondAttribute="trailing" id="lVv-vI-Qz8"/>
                             <constraint firstItem="tuZ-L8-Ccd" firstAttribute="width" secondItem="kxC-Cg-XEY" secondAttribute="width" id="oUL-FX-b1d"/>
-                            <constraint firstItem="B7n-BB-vz1" firstAttribute="top" secondItem="ixr-sD-Du9" secondAttribute="top" id="qXj-d4-n54"/>
+                            <constraint firstItem="B7n-BB-vz1" firstAttribute="top" secondItem="ixr-sD-Du9" secondAttribute="top" constant="44" id="qXj-d4-n54"/>
+                            <constraint firstItem="odx-Kk-bJl" firstAttribute="centerX" secondItem="ixr-sD-Du9" secondAttribute="centerX" id="r4d-nt-tRc"/>
                             <constraint firstItem="tuZ-L8-Ccd" firstAttribute="height" secondItem="kxC-Cg-XEY" secondAttribute="height" id="s85-gT-AR0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ixr-sD-Du9"/>
@@ -804,9 +806,6 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                     <navigationItem key="navigationItem" title="SIGN UP" id="9nB-Kf-oes">
                         <barButtonItem key="leftBarButtonItem" image="BackArrow" id="Pwz-S4-FTM">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <action selector="backAction:" destination="jBy-OE-FrT" id="8ie-Lz-xXL"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <size key="freeformSize" width="375" height="667"/>
@@ -839,20 +838,20 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoginHeader" translatesAutoresizingMaskIntoConstraints="NO" id="50q-Ww-XCc">
-                                <rect key="frame" x="94" y="104" width="187.5" height="115"/>
+                                <rect key="frame" x="94" y="60" width="187.5" height="115"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="188" id="D0U-fH-mI2"/>
                                     <constraint firstAttribute="height" constant="115" id="HkP-f6-xRb"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLACE YOUR ITEMS LIKE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F5g-Dv-oMg">
-                                <rect key="frame" x="67" y="254" width="241" height="24"/>
+                                <rect key="frame" x="67" y="210" width="241" height="24"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Specimen_Card" translatesAutoresizingMaskIntoConstraints="NO" id="qxv-0G-8Ul">
-                                <rect key="frame" x="88" y="308" width="200" height="120"/>
+                                <rect key="frame" x="88" y="264" width="200" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="QOM-z1-RCV"/>
                                     <constraint firstAttribute="height" constant="120" id="h5e-z2-VV8"/>
@@ -1040,6 +1039,7 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                     </navigationItem>
                     <connections>
                         <outlet property="colHome" destination="bup-XU-NbG" id="LI2-7Z-MTa"/>
+                        <outlet property="lblProfileName" destination="T2L-Pq-Uka" id="UNQ-bF-Gme"/>
                         <outlet property="pgCtrlLogin" destination="zlY-4v-uiJ" id="uEn-Zr-rnu"/>
                         <outlet property="scrollLoginBanner" destination="FVa-68-62L" id="qNi-SK-lSC"/>
                         <outlet property="viewScrollContent" destination="Chm-rN-0Mk" id="rjd-63-qHO"/>
@@ -1175,30 +1175,6 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yvo-Hm-1jc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2874" y="-716"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="OFj-ZE-JSk">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NzE-er-vgI" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Iyf-91-n9C">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="barTintColor" red="0.90196078430000004" green="0.1647058824" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
-                        <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="17"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="jBy-OE-FrT" kind="relationship" relationship="rootViewController" id="iIz-vi-t9d"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BqL-G7-mTB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="25" y="41"/>
         </scene>
         <!--My Navigation Controller-->
         <scene sceneID="BJs-7a-Ydx">
@@ -1382,28 +1358,6 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wi7-Bl-zZy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1133.5999999999999" y="-1563.8680659670167"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="ofT-Ht-c3o">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2xy-4g-0Kp" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EL1-um-eXN">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.90196078430000004" green="0.1647058824" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="h0z-PK-wQ7" kind="relationship" relationship="rootViewController" id="uLO-YZ-8JL"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ctO-dc-ueA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-3116" y="809"/>
         </scene>
     </scenes>
     <resources>

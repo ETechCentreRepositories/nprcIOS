@@ -45,6 +45,12 @@ class SideMenuVC: UIViewController,UITableViewDelegate,UITableViewDataSource
     override func viewWillAppear(_ animated: Bool)
     {
         self.imgProfile.makeRounded()
+        
+        if let name = UserDefaults.standard.string(forKey: "name")
+        {
+            self.lblProfileName.text = name
+        }
+        
         // Preserve selection between presentations
         self.tblSideMenu.clearsContextBeforeDrawing = true
         tblSideMenu.selectRow(at: IndexPath(row: selectedMenuItem, section: 0), animated: false, scrollPosition: .middle)
@@ -58,19 +64,18 @@ class SideMenuVC: UIViewController,UITableViewDelegate,UITableViewDataSource
         
         self.arrSideMenuSubTitle.removeAll()
         
-        if let name = UserDefaults.standard.string(forKey: "name")
-        {
-             self.arrSideMenuSubTitle.append(name)
-        }
         if let email = UserDefaults.standard.string(forKey: "email")
         {
             self.arrSideMenuSubTitle.append(email)
+        }
+        if let mobile = UserDefaults.standard.string(forKey: "mobile")
+        {
+            self.arrSideMenuSubTitle.append(mobile)
         }
         if let dob = UserDefaults.standard.string(forKey: "dob")
         {
             self.arrSideMenuSubTitle.append(dob)
         }
-        
         if arrSideMenuSubTitle.count < 3
         {
             arrSideMenuSubTitle = ["","",""]
@@ -120,7 +125,7 @@ class SideMenuVC: UIViewController,UITableViewDelegate,UITableViewDataSource
         if indexPath.row == 3
         {
             let cell = tableView.dequeueReusableCell(withIdentifier: "SideMenuCell", for: indexPath) as! SideMenuCell
-            cell.imgIcon.image = UIImage(named: "Spartens@3x.png")
+            cell.imgIcon.image = UIImage(named: "logout.png")
             cell.lblTitle.text = "Logout"
             return cell
         }
@@ -139,7 +144,7 @@ class SideMenuVC: UIViewController,UITableViewDelegate,UITableViewDataSource
     {
         if (indexPath.row == 3)
         {
-            self.navigationController?.popToRootViewController(animated: true)
+            self.view.window!.rootViewController?.dismiss(animated: true, completion: nil)
         }
     }
     

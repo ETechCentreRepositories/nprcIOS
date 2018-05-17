@@ -83,6 +83,15 @@ class LoginVC: UIViewController {
         print("User \(user)")
     }
     
+    @IBAction func Login(_ sender: UIButton)
+    {
+        let loginActionVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginAction") as! LoginAction
+        self.present(loginActionVC, animated: true, completion: nil)
+    }
 
-
+    @IBAction func SignUpEmail(_ sender: UIButton)
+    {
+        let signUpVC = self.storyboard?.instantiateViewController(withIdentifier: "SignUpVC") as! SignUpVC
+        self.present(signUpVC, animated: true, completion: nil)
+    }
 }

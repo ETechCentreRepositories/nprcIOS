@@ -227,6 +227,7 @@ class SignUpVC: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPick
         }
         else if textField == self.txtSecSchool
         {
+            txtSecSchool.resignFirstResponder()
             self.showAnimate()
         }
         else
@@ -244,10 +245,27 @@ class SignUpVC: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPick
             txtPassword.becomeFirstResponder()
             break
         case txtPassword:
-            txtPassword.resignFirstResponder()
+            txtConfirmPassword.becomeFirstResponder()
+            break
+        case txtConfirmPassword:
+            txtFirstName.becomeFirstResponder()
+            break
+        case txtFirstName:
+            txtLastName.becomeFirstResponder()
+            break
+        case txtLastName:
+            txtBirthDate.becomeFirstResponder()
+            break
+        case txtBirthDate:
+            txtContact.becomeFirstResponder()
+            break
+        case txtBirthDate:
+            txtContact.resignFirstResponder()
             break
         case txtDietryReq:
             txtDietryReq.resignFirstResponder()
+        case txtSecSchool:
+            txtSecSchool.resignFirstResponder()
         default:
             return true
         }

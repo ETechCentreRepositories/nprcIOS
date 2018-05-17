@@ -58,9 +58,10 @@ class LoginAction: UIViewController,UITextFieldDelegate {
             let userDetails = result as! [UserDetails]
             print(userDetails[0])
             
-            UserDefaults.standard.set(userDetails[0].name, forKey: "name") //Bool
-            UserDefaults.standard.set(userDetails[0].email, forKey: "email") //Bool
-            UserDefaults.standard.set(userDetails[0].dob, forKey: "dob") //Bool
+            UserDefaults.standard.set(userDetails[0].name, forKey: "name")
+            UserDefaults.standard.set(userDetails[0].email, forKey: "email")
+            UserDefaults.standard.set(userDetails[0].dob, forKey: "dob")
+            UserDefaults.standard.set(userDetails[0].mobile, forKey: "mobile")
             
             let homeVC = self.storyboard?.instantiateViewController(withIdentifier: "MyNavigationController") as! MyNavigationController
             self.present(homeVC, animated: true, completion: nil)

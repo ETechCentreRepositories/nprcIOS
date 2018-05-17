@@ -16,6 +16,7 @@ class HomeVC: UIViewController,ENSideMenuDelegate,UICollectionViewDelegate,UICol
     @IBOutlet weak var pgCtrlLogin: UIPageControl!
     @IBOutlet weak var scrollLoginBanner: UIScrollView!
     @IBOutlet weak var viewScrollContent: UIView!
+    @IBOutlet weak var lblProfileName: UILabel!
     
     var arrTitle = ["CAMP PROGRAMME","COURSE FINDER","CAMPUS EXPLORER","ASK RED CAMP"]
     
@@ -41,6 +42,12 @@ class HomeVC: UIViewController,ENSideMenuDelegate,UICollectionViewDelegate,UICol
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0
         colHome!.collectionViewLayout = layout
+        
+        if let name = UserDefaults.standard.string(forKey: "name")
+        {
+            let arrNames = name.split(separator: " ")
+            self.lblProfileName.text = "Hello " + arrNames[0] + "!"
+        }
         
     }
     override func didReceiveMemoryWarning() {

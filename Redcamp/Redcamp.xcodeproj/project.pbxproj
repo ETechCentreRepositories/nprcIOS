@@ -11,6 +11,7 @@
 		482A33C220AC6A2C00D6A21C /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 482A33BE20AC6A2B00D6A21C /* FBSDKShareKit.framework */; };
 		482A33C320AC6A2C00D6A21C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 482A33BF20AC6A2B00D6A21C /* Bolts.framework */; };
 		482A33C420AC6A2C00D6A21C /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 482A33C020AC6A2C00D6A21C /* FBSDKCoreKit.framework */; };
+		7C5ED8AA20AD2BB7001D2B8F /* logout.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5ED8A920AD2BB6001D2B8F /* logout.png */; };
 		7CBB720020A290EC001476E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBB71FF20A290EC001476E9 /* AppDelegate.swift */; };
 		7CBB720220A290ED001476E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBB720120A290ED001476E9 /* ViewController.swift */; };
 		7CBB720520A290ED001476E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CBB720320A290ED001476E9 /* Main.storyboard */; };
@@ -44,6 +45,7 @@
 		482A33C020AC6A2C00D6A21C /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		482A33C520AC703F00D6A21C /* Redcamp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Redcamp.entitlements; sourceTree = "<group>"; };
 		4FB139EAC243CDD236194503 /* Pods-Redcamp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Redcamp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Redcamp/Pods-Redcamp.debug.xcconfig"; sourceTree = "<group>"; };
+		7C5ED8A920AD2BB6001D2B8F /* logout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logout.png; sourceTree = "<group>"; };
 		7CBB71FC20A290EC001476E9 /* Redcamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Redcamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CBB71FF20A290EC001476E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CBB720120A290ED001476E9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				7CBB720820A290ED001476E9 /* LaunchScreen.storyboard */,
 				7CBB720B20A290ED001476E9 /* Info.plist */,
 				7CBB721A20A2E30A001476E9 /* Text-Box-Frame-PNG-Photo@3x.png */,
+				7C5ED8A920AD2BB6001D2B8F /* logout.png */,
 				7CBB721C20A2E315001476E9 /* NoPath@3x.png */,
 				7CBB721D20A2E317001476E9 /* redcamp-spartans copy@3x.png */,
 				7CBB722020A2EE7A001476E9 /* Spartens@3x.png */,
@@ -286,6 +289,7 @@
 				7CBB721F20A2E31A001476E9 /* redcamp-spartans copy@3x.png in Resources */,
 				7CBB721B20A2E30A001476E9 /* Text-Box-Frame-PNG-Photo@3x.png in Resources */,
 				7CBB720720A290ED001476E9 /* Assets.xcassets in Resources */,
+				7C5ED8AA20AD2BB7001D2B8F /* logout.png in Resources */,
 				7CBB720520A290ED001476E9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

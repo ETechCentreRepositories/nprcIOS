@@ -16,6 +16,8 @@ class WelcomeVC: UIViewController {
         super.viewDidLoad()
 
         btnLetsgo.layer.cornerRadius = 10
+        
+       
         // Do any additional setup after loading the view.
     }
 
@@ -36,6 +38,13 @@ class WelcomeVC: UIViewController {
     */
     @IBAction func performLetsGo(_ sender: Any)
     {
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let loginVC = mainStoryboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+        
+        self.view.window?.rootViewController = loginVC
+        self.view?.window?.makeKeyAndVisible()
+        self.present(loginVC, animated: true, completion: nil)
+        
         
     }
     
