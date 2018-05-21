@@ -125,6 +125,7 @@ class SideMenuVC: UIViewController,UITableViewDelegate,UITableViewDataSource
         if indexPath.row == 3
         {
             let cell = tableView.dequeueReusableCell(withIdentifier: "SideMenuCell", for: indexPath) as! SideMenuCell
+            cell.contentView.backgroundColor = UIColor.darkGray
             cell.imgIcon.image = UIImage(named: "logout.png")
             cell.lblTitle.text = "Logout"
             return cell

@@ -102,7 +102,7 @@ class HomeVC: UIViewController,ENSideMenuDelegate,UICollectionViewDelegate,UICol
             }
             if (indexPath.row == 3)
             {
-                homeCell.imgBackGround.image = UIImage(named: "Home_Discoery")
+                homeCell.imgBackGround.image = UIImage(named: "Home_Contact")
             }
         }
         

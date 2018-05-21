@@ -16,15 +16,18 @@ class LoginVC: UIViewController,GIDSignInDelegate,GIDSignInUIDelegate {
     @IBOutlet weak var btnGoogle: UIButton!
     @IBOutlet weak var btnEmail: UIButton!
     @IBOutlet weak var btnLogin: UIButton!
-    
+    @IBOutlet weak var btnFBAction: UIButton!
+    @IBOutlet weak var btnGoogleAction: UIButton!
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
-        btnFacebook.layer.cornerRadius = 10
-        btnGoogle.layer.cornerRadius = 10
-        btnEmail.layer.cornerRadius = 10
-        btnLogin.layer.cornerRadius = 10
+        btnFacebook.layer.cornerRadius = 15
+        btnGoogle.layer.cornerRadius = 15
+        btnEmail.layer.cornerRadius = 15
+        btnLogin.layer.cornerRadius = 15
+        btnFBAction.layer.cornerRadius = 15
+        btnGoogleAction.layer.cornerRadius = 15
         // Do any additional setup after loading the view.
         
         btnFacebook.addTarget(self, action: #selector(facebookLogin), for: .touchUpInside)

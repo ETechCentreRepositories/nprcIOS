@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import TesseractOCR
+//import TesseractOCR
 
 class ScanVC: UIViewController
 {
@@ -36,7 +36,7 @@ class ScanVC: UIViewController
     // Tesseract Image Recognition
     func performImageRecognition(_ image: UIImage) {
         
-        if let tesseract = G8Tesseract(language: "eng+fra") {
+        /*if let tesseract = G8Tesseract(language: "eng+fra") {
             tesseract.engineMode = .tesseractCubeCombined
             tesseract.pageSegmentationMode = .auto
             tesseract.image = image.g8_blackAndWhite()
@@ -50,7 +50,7 @@ class ScanVC: UIViewController
             SignUpVController.OCR = String(tesseract.recognizedText!.filter { !" ,.)-\"\'\n\t\r".contains($0) })
             self.present(SignUpVController, animated:true, completion:nil)
 
-        }
+        }*/
         //UIActivityIndicatorView.stopAnimating()
     }
 }

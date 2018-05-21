@@ -9,13 +9,18 @@
 /* Begin PBXBuildFile section */
 		48228F5620AEAE41007CFF7D /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 48228F5520AEAE41007CFF7D /* libstdc++.tbd */; };
 		48228F5820AEAE54007CFF7D /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48228F5720AEAE54007CFF7D /* CoreImage.framework */; };
-		48228F5A20AEAE61007CFF7D /* TesseractOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48228F5920AEAE61007CFF7D /* TesseractOCR.framework */; };
 		48228F5C20AEC2C4007CFF7D /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 48228F5B20AEC2C3007CFF7D /* tessdata */; };
 		48228F6820B01A8A007CFF7D /* spartan.png in Resources */ = {isa = PBXBuildFile; fileRef = 48228F6720B01A89007CFF7D /* spartan.png */; };
 		482A33C120AC6A2C00D6A21C /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 482A33BD20AC6A2B00D6A21C /* FBSDKLoginKit.framework */; };
 		482A33C220AC6A2C00D6A21C /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 482A33BE20AC6A2B00D6A21C /* FBSDKShareKit.framework */; };
 		482A33C320AC6A2C00D6A21C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 482A33BF20AC6A2B00D6A21C /* Bolts.framework */; };
 		482A33C420AC6A2C00D6A21C /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 482A33C020AC6A2C00D6A21C /* FBSDKCoreKit.framework */; };
+		7C1E64EB20B2B8580068F202 /* HomeHeader.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C1E64EA20B2B8570068F202 /* HomeHeader.png */; };
+		7C1E64ED20B2B8640068F202 /* in app logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C1E64EC20B2B8620068F202 /* in app logo.png */; };
+		7C1E64F220B2B8750068F202 /* campusexplorer.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C1E64EE20B2B86D0068F202 /* campusexplorer.png */; };
+		7C1E64F320B2B8750068F202 /* pathofdiscovery.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C1E64EF20B2B86F0068F202 /* pathofdiscovery.png */; };
+		7C1E64F420B2B8750068F202 /* askredcamp.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C1E64F020B2B8700068F202 /* askredcamp.png */; };
+		7C1E64F520B2B8750068F202 /* campporgramme.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C1E64F120B2B8720068F202 /* campporgramme.png */; };
 		7C5ED8AA20AD2BB7001D2B8F /* logout.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5ED8A920AD2BB6001D2B8F /* logout.png */; };
 		7CBB720020A290EC001476E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBB71FF20A290EC001476E9 /* AppDelegate.swift */; };
 		7CBB720220A290ED001476E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBB720120A290ED001476E9 /* ViewController.swift */; };
@@ -55,6 +60,12 @@
 		482A33C020AC6A2C00D6A21C /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		482A33C520AC703F00D6A21C /* Redcamp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Redcamp.entitlements; sourceTree = "<group>"; };
 		4FB139EAC243CDD236194503 /* Pods-Redcamp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Redcamp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Redcamp/Pods-Redcamp.debug.xcconfig"; sourceTree = "<group>"; };
+		7C1E64EA20B2B8570068F202 /* HomeHeader.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HomeHeader.png; sourceTree = "<group>"; };
+		7C1E64EC20B2B8620068F202 /* in app logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "in app logo.png"; sourceTree = "<group>"; };
+		7C1E64EE20B2B86D0068F202 /* campusexplorer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = campusexplorer.png; sourceTree = "<group>"; };
+		7C1E64EF20B2B86F0068F202 /* pathofdiscovery.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pathofdiscovery.png; sourceTree = "<group>"; };
+		7C1E64F020B2B8700068F202 /* askredcamp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = askredcamp.png; sourceTree = "<group>"; };
+		7C1E64F120B2B8720068F202 /* campporgramme.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = campporgramme.png; sourceTree = "<group>"; };
 		7C5ED8A920AD2BB6001D2B8F /* logout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logout.png; sourceTree = "<group>"; };
 		7CBB71FC20A290EC001476E9 /* Redcamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Redcamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CBB71FF20A290EC001476E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -88,7 +99,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48228F5A20AEAE61007CFF7D /* TesseractOCR.framework in Frameworks */,
 				48228F5820AEAE54007CFF7D /* CoreImage.framework in Frameworks */,
 				48228F5620AEAE41007CFF7D /* libstdc++.tbd in Frameworks */,
 				482A33C420AC6A2C00D6A21C /* FBSDKCoreKit.framework in Frameworks */,
@@ -159,6 +169,12 @@
 				7CBB720B20A290ED001476E9 /* Info.plist */,
 				7CBB721A20A2E30A001476E9 /* Text-Box-Frame-PNG-Photo@3x.png */,
 				48228F6720B01A89007CFF7D /* spartan.png */,
+				7C1E64EA20B2B8570068F202 /* HomeHeader.png */,
+				7C1E64EC20B2B8620068F202 /* in app logo.png */,
+				7C1E64F020B2B8700068F202 /* askredcamp.png */,
+				7C1E64F120B2B8720068F202 /* campporgramme.png */,
+				7C1E64EE20B2B86D0068F202 /* campusexplorer.png */,
+				7C1E64EF20B2B86F0068F202 /* pathofdiscovery.png */,
 				7C5ED8A920AD2BB6001D2B8F /* logout.png */,
 				7CBB721C20A2E315001476E9 /* NoPath@3x.png */,
 				7CBB721D20A2E317001476E9 /* redcamp-spartans copy@3x.png */,
@@ -301,16 +317,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C1E64F320B2B8750068F202 /* pathofdiscovery.png in Resources */,
 				7CBB720A20A290ED001476E9 /* LaunchScreen.storyboard in Resources */,
 				7CBB722120A2EE7A001476E9 /* Spartens@3x.png in Resources */,
 				48228F5C20AEC2C4007CFF7D /* tessdata in Resources */,
 				7CBB721E20A2E31A001476E9 /* NoPath@3x.png in Resources */,
 				7CBB721F20A2E31A001476E9 /* redcamp-spartans copy@3x.png in Resources */,
+				7C1E64EB20B2B8580068F202 /* HomeHeader.png in Resources */,
 				7CBB721B20A2E30A001476E9 /* Text-Box-Frame-PNG-Photo@3x.png in Resources */,
+				7C1E64ED20B2B8640068F202 /* in app logo.png in Resources */,
 				7CBB720720A290ED001476E9 /* Assets.xcassets in Resources */,
+				7C1E64F220B2B8750068F202 /* campusexplorer.png in Resources */,
 				7C5ED8AA20AD2BB7001D2B8F /* logout.png in Resources */,
 				7CBB720520A290ED001476E9 /* Main.storyboard in Resources */,
+				7C1E64F420B2B8750068F202 /* askredcamp.png in Resources */,
 				48228F6820B01A8A007CFF7D /* spartan.png in Resources */,
+				7C1E64F520B2B8750068F202 /* campporgramme.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,7 +372,6 @@
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/TesseractOCRiOS/TesseractOCR.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -362,7 +383,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TesseractOCR.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

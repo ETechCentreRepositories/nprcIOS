@@ -83,9 +83,13 @@ class LoginAction: UIViewController,UITextFieldDelegate {
     }
     
     func callServerLogin(){
-        let parameters: Parameters=[
+       /* let parameters: Parameters=[
             "email" : email_id,
             "password" : password
+        ]*/
+        let parameters: Parameters=[
+            "email":"bryanlowsk@gmail.com",//txtEmail.text!,
+            "password":"Bryan987"//txtPassword.text!
         ]
         let URL_USER_REGISTER = "http://ehostingcentre.com/redcampadmin/API/login.php"
         Alamofire.request(URL_USER_REGISTER, method: .post, parameters: parameters).responseJSON

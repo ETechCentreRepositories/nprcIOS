@@ -259,7 +259,7 @@ class SignUpVC: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPick
                                                             attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
         txtnric.attributedPlaceholder = NSAttributedString(string: " NRIC",
                                                                 attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
-        txtBirthDate.attributedPlaceholder = NSAttributedString(string: " Birth Date",
+        txtBirthDate.attributedPlaceholder = NSAttributedString(string: " Date of Birth DD-MM-YYYY",
                                                             attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
         txtDietryReq.attributedPlaceholder = NSAttributedString(string: " * Dietry Requirements",
                                                             attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
