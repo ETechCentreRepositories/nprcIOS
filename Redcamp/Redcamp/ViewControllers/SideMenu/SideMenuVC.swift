@@ -145,7 +145,13 @@ class SideMenuVC: UIViewController,UITableViewDelegate,UITableViewDataSource
     {
         if (indexPath.row == 3)
         {
-            self.view.window!.rootViewController?.dismiss(animated: true, completion: nil)
+            UserDefaults.standard.set("0", forKey: "loginStatus")
+            UserDefaults.standard.synchronize()
+            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let viewController = mainStoryboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+            UIApplication.shared.keyWindow?.rootViewController = viewController
+            
+            //self.view.window!.rootViewController?.dismiss(animated: true, completion: nil)
         }
     }
     

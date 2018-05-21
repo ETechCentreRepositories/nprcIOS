@@ -195,7 +195,7 @@ class SignUpVC: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPick
     @IBOutlet weak var txtConfirmPassword: UITextField!
     
     @IBOutlet weak var btnSignUp: UIButton!
-    @IBOutlet weak var btnScanID: UIButton!
+
     
     @IBOutlet weak var txtnric: UITextField!
     @IBOutlet weak var txtFirstName: UITextField!
@@ -234,7 +234,7 @@ class SignUpVC: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPick
     
     override func viewWillAppear(_ animated: Bool)
     {
-        btnScanID.layer.cornerRadius = 10
+        
         btnSignUp.layer.cornerRadius = 10
         
         txtPassword.setCustomBorder()
@@ -259,7 +259,7 @@ class SignUpVC: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPick
                                                             attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
         txtnric.attributedPlaceholder = NSAttributedString(string: " NRIC",
                                                                 attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
-        txtBirthDate.attributedPlaceholder = NSAttributedString(string: " Date of Birth DD-MM-YYYY",
+        txtBirthDate.attributedPlaceholder = NSAttributedString(string: " Date of Birth (DD-MM-YYYY)",
                                                             attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
         txtDietryReq.attributedPlaceholder = NSAttributedString(string: " * Dietry Requirements",
                                                             attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
@@ -631,7 +631,7 @@ class SignUpVC: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPick
         default:
             return true
         }
-        self.view.endEditing(true)
+        //self.view.endEditing(true)
         return true
     }
     

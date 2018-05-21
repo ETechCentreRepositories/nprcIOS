@@ -15,6 +15,7 @@
 		482A33C220AC6A2C00D6A21C /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 482A33BE20AC6A2B00D6A21C /* FBSDKShareKit.framework */; };
 		482A33C320AC6A2C00D6A21C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 482A33BF20AC6A2B00D6A21C /* Bolts.framework */; };
 		482A33C420AC6A2C00D6A21C /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 482A33C020AC6A2C00D6A21C /* FBSDKCoreKit.framework */; };
+		48BC380920B2D6D4007B6079 /* SignUpSocial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BC380820B2D6D4007B6079 /* SignUpSocial.swift */; };
 		7C1E64EB20B2B8580068F202 /* HomeHeader.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C1E64EA20B2B8570068F202 /* HomeHeader.png */; };
 		7C1E64ED20B2B8640068F202 /* in app logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C1E64EC20B2B8620068F202 /* in app logo.png */; };
 		7C1E64F220B2B8750068F202 /* campusexplorer.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C1E64EE20B2B86D0068F202 /* campusexplorer.png */; };
@@ -59,6 +60,7 @@
 		482A33BF20AC6A2B00D6A21C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		482A33C020AC6A2C00D6A21C /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		482A33C520AC703F00D6A21C /* Redcamp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Redcamp.entitlements; sourceTree = "<group>"; };
+		48BC380820B2D6D4007B6079 /* SignUpSocial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpSocial.swift; sourceTree = "<group>"; };
 		4FB139EAC243CDD236194503 /* Pods-Redcamp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Redcamp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Redcamp/Pods-Redcamp.debug.xcconfig"; sourceTree = "<group>"; };
 		7C1E64EA20B2B8570068F202 /* HomeHeader.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HomeHeader.png; sourceTree = "<group>"; };
 		7C1E64EC20B2B8620068F202 /* in app logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "in app logo.png"; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				7CC3CCA620A9870900FB8612 /* LoginAction.swift */,
 				7CC3CCAA20A9911400FB8612 /* SignUpVC.swift */,
 				7CC3CCAC20A995E600FB8612 /* ScanVC.swift */,
+				48BC380820B2D6D4007B6079 /* SignUpSocial.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 				7CC3CCAD20A995E600FB8612 /* ScanVC.swift in Sources */,
 				7CC3CCA520A97C3000FB8612 /* WelcomeVC.swift in Sources */,
 				7CC1761020A93D720074942C /* ProgrammeVC.swift in Sources */,
+				48BC380920B2D6D4007B6079 /* SignUpSocial.swift in Sources */,
 				7CC3CCA720A9870900FB8612 /* LoginAction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

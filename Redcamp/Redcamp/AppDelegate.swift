@@ -25,6 +25,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //GIDSignIn.sharedInstance().delegate = self
         
         // Override point for customization after application launch.
+        
+        if let status = UserDefaults.standard.string(forKey: "loginStatus")
+        {
+            if status == "0"
+            {
+                let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let viewController = mainStoryboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+                self.window?.rootViewController = viewController
+                self.window?.makeKeyAndVisible()
+            }
+            else if status == "1"
+            {
+                let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let viewController = mainStoryboard.instantiateViewController(withIdentifier: "MyNavigationController") as! MyNavigationController
+                self.window?.rootViewController = viewController
+                self.window?.makeKeyAndVisible()
+            }
+            else
+            {
+                let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let viewController = mainStoryboard.instantiateViewController(withIdentifier: "WelcomeVC") as! WelcomeVC
+                self.window?.rootViewController = viewController
+                self.window?.makeKeyAndVisible()
+            }
+        }
         return true
     }
     

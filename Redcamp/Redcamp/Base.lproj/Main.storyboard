@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3j5-Y5-kBl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3j5-Y5-kBl">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Quicksand-Regular.ttf">
-            <string>Quicksand-Regular</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--WelcomeVC-->
         <scene sceneID="cB0-FP-N8J">
@@ -34,8 +29,12 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9v9-LZ-7Uk">
                                 <rect key="frame" x="0.0" y="60" width="375" height="200"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoginHeader" translatesAutoresizingMaskIntoConstraints="NO" id="MTl-tX-OMK">
-                                        <rect key="frame" x="81" y="27.5" width="214" height="145"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="in app logo.png" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MTl-tX-OMK">
+                                        <rect key="frame" x="80.5" y="25" width="215" height="150"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="215" id="L9R-8q-kwH"/>
+                                            <constraint firstAttribute="height" constant="150" id="ukn-7R-wZW"/>
+                                        </constraints>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -115,7 +114,7 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rz3-2G-QyS">
                                 <rect key="frame" x="0.0" y="10" width="375" height="167"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoginHeader" translatesAutoresizingMaskIntoConstraints="NO" id="Tnt-5v-KTh">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="in app logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Tnt-5v-KTh">
                                         <rect key="frame" x="94" y="25" width="187.5" height="117"/>
                                     </imageView>
                                 </subviews>
@@ -321,7 +320,7 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="backAction:" destination="h0z-PK-wQ7" eventType="touchUpInside" id="4iZ-NZ-KjC"/>
+                                            <action selector="backAction:" destination="h0z-PK-wQ7" eventType="touchUpInside" id="4dL-Yk-hI1"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -341,7 +340,7 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AG2-HO-5TC">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="246"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoginHeader" translatesAutoresizingMaskIntoConstraints="NO" id="4ki-mY-s52">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="in app logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="4ki-mY-s52">
                                                         <rect key="frame" x="113" y="49.5" width="150" height="147.5"/>
                                                     </imageView>
                                                 </subviews>
@@ -483,7 +482,7 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                     <connections>
                         <outlet property="btnLogin" destination="jqh-Xg-ctZ" id="pT5-bv-9Ti"/>
                         <outlet property="scrollLogin" destination="UkR-Ll-wSs" id="SXA-qh-Usu"/>
-                        <outlet property="txtEmail" destination="uQz-MN-tXB" id="FPt-go-5cT"/>
+                        <outlet property="txtEmail" destination="uQz-MN-tXB" id="pgi-dh-who"/>
                         <outlet property="txtPassword" destination="IIu-9t-cHt" id="rBz-Hx-LAs"/>
                     </connections>
                 </viewController>
@@ -491,10 +490,10 @@ Register for RED camp here and get updates and other fun stuff all from your pho
             </objects>
             <point key="canvasLocation" x="-2343" y="824"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign Up Social-->
         <scene sceneID="vBb-16-qex">
             <objects>
-                <viewController id="Cxg-h6-hfA" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpSocial" id="Cxg-h6-hfA" customClass="SignUpSocial" customModule="Redcamp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="a94-1r-dfL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -613,6 +612,7 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
+                                                    <action selector="signUpDetails:" destination="Cxg-h6-hfA" eventType="touchUpInside" id="jSi-Ee-2rA"/>
                                                     <action selector="signUpDetails:" destination="jBy-OE-FrT" eventType="touchUpInside" id="vKF-1e-wue"/>
                                                 </connections>
                                             </button>
@@ -695,6 +695,7 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                                 </state>
                                 <connections>
                                     <action selector="backAction:" destination="h0z-PK-wQ7" eventType="touchUpInside" id="2gF-9M-9Tc"/>
+                                    <action selector="backAction:" destination="Cxg-h6-hfA" eventType="touchUpInside" id="CzW-mn-5sq"/>
                                     <action selector="backAction:" destination="jBy-OE-FrT" eventType="touchUpInside" id="ehw-Mq-9hU"/>
                                 </connections>
                             </button>
@@ -782,6 +783,15 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Cfw-XN-aTe"/>
                     </view>
+                    <connections>
+                        <outlet property="btnSignUp" destination="ixw-Ji-68l" id="5tD-YL-2Th"/>
+                        <outlet property="scrollSignUp" destination="yZ1-PV-x8I" id="zoB-p9-k7s"/>
+                        <outlet property="txtBirthDate" destination="l8x-ri-4Lz" id="Nel-Pz-zO3"/>
+                        <outlet property="txtContact" destination="CuC-SS-qAY" id="pK6-s1-RtG"/>
+                        <outlet property="txtDietryReq" destination="uau-HK-fD2" id="x1Y-oN-jp0"/>
+                        <outlet property="txtFirstName" destination="OXh-re-QdV" id="fYY-o9-D6H"/>
+                        <outlet property="txtSecSchool" destination="jIL-rM-tLO" id="dOq-mD-oyd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cYz-L7-K4H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -860,18 +870,8 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                                                     <outlet property="delegate" destination="jBy-OE-FrT" id="Vel-Qt-9VR"/>
                                                 </connections>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XXR-mU-br4">
-                                                <rect key="frame" x="37.5" y="185" width="300" height="35"/>
-                                                <color key="backgroundColor" red="0.63529411764705879" green="0.63529411764705879" blue="0.63529411764705879" alpha="1" colorSpace="calibratedRGB"/>
-                                                <state key="normal" title="📷  SCAN WITH STUDENT EZ LINK">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <segue destination="Cqq-2p-9vz" kind="show" id="JmH-7e-EZk"/>
-                                                </connections>
-                                            </button>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hoc-nP-ao2">
-                                                <rect key="frame" x="37.5" y="235" width="300" height="35"/>
+                                                <rect key="frame" x="37.5" y="165" width="300" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="cfm-Nw-FEg"/>
                                                 </constraints>
@@ -883,7 +883,7 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Birth Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MQs-0q-cEF">
-                                                <rect key="frame" x="37.5" y="342" width="300" height="35"/>
+                                                <rect key="frame" x="37.5" y="272" width="300" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="jiA-m4-WKY"/>
                                                 </constraints>
@@ -895,7 +895,7 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Mobile Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fIi-hq-a8s">
-                                                <rect key="frame" x="37" y="392" width="300" height="35"/>
+                                                <rect key="frame" x="37" y="322" width="300" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="F9c-aS-Rbj"/>
                                                 </constraints>
@@ -907,7 +907,7 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Secondary School" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xCm-Fg-lkm">
-                                                <rect key="frame" x="37" y="442" width="300" height="35"/>
+                                                <rect key="frame" x="37" y="372" width="300" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="lk1-jC-26g"/>
                                                 </constraints>
@@ -919,7 +919,7 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Dietry Requirements" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JGB-tf-Q1D">
-                                                <rect key="frame" x="37" y="492" width="300" height="35"/>
+                                                <rect key="frame" x="37" y="422" width="300" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="h2d-3h-8en"/>
                                                 </constraints>
@@ -931,7 +931,7 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                                                 </connections>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2cE-Xd-GXl">
-                                                <rect key="frame" x="37" y="542" width="300" height="35"/>
+                                                <rect key="frame" x="37" y="472" width="300" height="35"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nNW-Rq-nBT">
                                                         <rect key="frame" x="2" y="6" width="24" height="24"/>
@@ -964,7 +964,7 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G3v-MC-P8O">
-                                                <rect key="frame" x="37" y="597" width="300" height="35"/>
+                                                <rect key="frame" x="37" y="527" width="300" height="35"/>
                                                 <color key="backgroundColor" red="0.90196078430000004" green="0.1647058824" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
                                                 <state key="normal" title="SIGN UP">
@@ -975,7 +975,7 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                                                 </connections>
                                             </button>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rx6-ZT-mfY" userLabel="Nric">
-                                                <rect key="frame" x="37" y="292" width="300" height="35"/>
+                                                <rect key="frame" x="37" y="222" width="300" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="fqu-7i-Ak3"/>
                                                 </constraints>
@@ -987,7 +987,7 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last 4 digits and last letter of NRIC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nYq-XE-0v4">
-                                                <rect key="frame" x="37.5" y="280" width="300" height="12"/>
+                                                <rect key="frame" x="37.5" y="210" width="300" height="12"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -998,7 +998,7 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                                             <constraint firstItem="nYq-XE-0v4" firstAttribute="width" secondItem="ptB-j1-LSR" secondAttribute="width" id="0Ea-13-K01"/>
                                             <constraint firstItem="Ed3-gD-Moy" firstAttribute="top" secondItem="wu6-wF-sjN" secondAttribute="bottom" constant="10" id="0ae-fd-XZk"/>
                                             <constraint firstItem="JGB-tf-Q1D" firstAttribute="height" secondItem="ptB-j1-LSR" secondAttribute="height" id="1PK-qr-nC4"/>
-                                            <constraint firstItem="XXR-mU-br4" firstAttribute="centerX" secondItem="tuZ-L8-Ccd" secondAttribute="centerX" id="1bG-5L-wyA"/>
+                                            <constraint firstItem="Hoc-nP-ao2" firstAttribute="top" secondItem="Ed3-gD-Moy" secondAttribute="bottom" constant="10" id="2d8-XS-Zaz"/>
                                             <constraint firstItem="xCm-Fg-lkm" firstAttribute="centerX" secondItem="ptB-j1-LSR" secondAttribute="centerX" id="4hg-D0-6A0"/>
                                             <constraint firstItem="fIi-hq-a8s" firstAttribute="height" secondItem="ptB-j1-LSR" secondAttribute="height" id="6TE-dw-VUi"/>
                                             <constraint firstItem="MQs-0q-cEF" firstAttribute="top" secondItem="Rx6-ZT-mfY" secondAttribute="bottom" constant="15" id="7fl-pe-slF"/>
@@ -1008,17 +1008,14 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                                             <constraint firstItem="nYq-XE-0v4" firstAttribute="bottom" secondItem="Rx6-ZT-mfY" secondAttribute="top" id="DAp-Rh-COR"/>
                                             <constraint firstItem="MQs-0q-cEF" firstAttribute="centerX" secondItem="ptB-j1-LSR" secondAttribute="centerX" id="FJo-5H-E9a"/>
                                             <constraint firstItem="wu6-wF-sjN" firstAttribute="centerX" secondItem="ptB-j1-LSR" secondAttribute="centerX" id="GG9-GJ-iYg"/>
-                                            <constraint firstItem="Hoc-nP-ao2" firstAttribute="top" secondItem="XXR-mU-br4" secondAttribute="bottom" constant="15" id="IaI-hv-D4g"/>
-                                            <constraint firstItem="XXR-mU-br4" firstAttribute="width" secondItem="Ed3-gD-Moy" secondAttribute="width" id="Jgg-4x-Li5"/>
                                             <constraint firstItem="ptB-j1-LSR" firstAttribute="width" secondItem="tuZ-L8-Ccd" secondAttribute="width" multiplier="0.8" id="MXh-Nn-XRa"/>
                                             <constraint firstItem="xCm-Fg-lkm" firstAttribute="top" secondItem="fIi-hq-a8s" secondAttribute="bottom" constant="15" id="OlI-97-BCG"/>
-                                            <constraint firstItem="Hoc-nP-ao2" firstAttribute="width" secondItem="XXR-mU-br4" secondAttribute="width" id="P0d-QR-dVj"/>
                                             <constraint firstItem="G3v-MC-P8O" firstAttribute="width" secondItem="ptB-j1-LSR" secondAttribute="width" id="PRe-FZ-0RK"/>
-                                            <constraint firstItem="Hoc-nP-ao2" firstAttribute="height" secondItem="XXR-mU-br4" secondAttribute="height" id="Rhh-hD-Tcg"/>
                                             <constraint firstItem="2cE-Xd-GXl" firstAttribute="width" secondItem="ptB-j1-LSR" secondAttribute="width" id="TUb-um-m1J"/>
                                             <constraint firstItem="wu6-wF-sjN" firstAttribute="top" secondItem="ptB-j1-LSR" secondAttribute="bottom" constant="10" id="WtF-5l-F5u"/>
                                             <constraint firstItem="JGB-tf-Q1D" firstAttribute="centerX" secondItem="ptB-j1-LSR" secondAttribute="centerX" id="Xsx-e8-sEo"/>
                                             <constraint firstItem="wu6-wF-sjN" firstAttribute="width" secondItem="ptB-j1-LSR" secondAttribute="width" id="Y8A-rw-GoF"/>
+                                            <constraint firstItem="Hoc-nP-ao2" firstAttribute="height" secondItem="ptB-j1-LSR" secondAttribute="height" id="YPM-YG-ArJ"/>
                                             <constraint firstItem="fIi-hq-a8s" firstAttribute="centerX" secondItem="ptB-j1-LSR" secondAttribute="centerX" id="aGm-Qy-dgh"/>
                                             <constraint firstItem="JGB-tf-Q1D" firstAttribute="top" secondItem="xCm-Fg-lkm" secondAttribute="bottom" constant="15" id="cXs-vk-a1u"/>
                                             <constraint firstItem="ptB-j1-LSR" firstAttribute="centerX" secondItem="tuZ-L8-Ccd" secondAttribute="centerX" id="co5-1T-vHc"/>
@@ -1028,14 +1025,13 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                                             <constraint firstItem="nYq-XE-0v4" firstAttribute="top" secondItem="Hoc-nP-ao2" secondAttribute="bottom" constant="10" id="gGS-24-6LC"/>
                                             <constraint firstItem="Rx6-ZT-mfY" firstAttribute="width" secondItem="ptB-j1-LSR" secondAttribute="width" id="hsl-7Z-czY"/>
                                             <constraint firstItem="fIi-hq-a8s" firstAttribute="width" secondItem="ptB-j1-LSR" secondAttribute="width" id="iHd-nK-PoP"/>
-                                            <constraint firstItem="XXR-mU-br4" firstAttribute="top" secondItem="Ed3-gD-Moy" secondAttribute="bottom" constant="30" id="j3L-Ih-wBj"/>
                                             <constraint firstItem="ptB-j1-LSR" firstAttribute="top" secondItem="tuZ-L8-Ccd" secondAttribute="top" constant="30" id="jHo-R9-qqZ"/>
                                             <constraint firstItem="xCm-Fg-lkm" firstAttribute="width" secondItem="ptB-j1-LSR" secondAttribute="width" id="jiG-Dl-ir4"/>
                                             <constraint firstItem="Rx6-ZT-mfY" firstAttribute="height" secondItem="ptB-j1-LSR" secondAttribute="height" id="jzW-hH-Ms7"/>
                                             <constraint firstItem="MQs-0q-cEF" firstAttribute="width" secondItem="ptB-j1-LSR" secondAttribute="width" id="lLR-uE-lhs"/>
                                             <constraint firstItem="Ed3-gD-Moy" firstAttribute="centerX" secondItem="wu6-wF-sjN" secondAttribute="centerX" id="mVa-Bg-d9c"/>
+                                            <constraint firstItem="Hoc-nP-ao2" firstAttribute="width" secondItem="ptB-j1-LSR" secondAttribute="width" id="maL-wX-27u"/>
                                             <constraint firstItem="fIi-hq-a8s" firstAttribute="top" secondItem="MQs-0q-cEF" secondAttribute="bottom" constant="15" id="nHU-rO-I6q"/>
-                                            <constraint firstItem="XXR-mU-br4" firstAttribute="height" secondItem="Ed3-gD-Moy" secondAttribute="height" id="pMP-fV-du5"/>
                                             <constraint firstItem="2cE-Xd-GXl" firstAttribute="top" secondItem="JGB-tf-Q1D" secondAttribute="bottom" constant="15" id="q6t-bd-13p"/>
                                             <constraint firstItem="G3v-MC-P8O" firstAttribute="top" secondItem="2cE-Xd-GXl" secondAttribute="bottom" constant="20" id="qqc-hb-ZvT"/>
                                             <constraint firstItem="nYq-XE-0v4" firstAttribute="centerX" secondItem="ptB-j1-LSR" secondAttribute="centerX" id="tIb-s5-7BL"/>
@@ -1146,7 +1142,6 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                     </navigationItem>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
-                        <outlet property="btnScanID" destination="XXR-mU-br4" id="3rt-7n-qJn"/>
                         <outlet property="btnSignUp" destination="G3v-MC-P8O" id="saV-b7-sKo"/>
                         <outlet property="constPickBottom" destination="YgY-9d-Pxm" id="20P-rD-JTG"/>
                         <outlet property="scrollSignUp" destination="B7n-BB-vz1" id="GAb-wp-4Gs"/>
@@ -1174,7 +1169,7 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoginHeader" translatesAutoresizingMaskIntoConstraints="NO" id="50q-Ww-XCc">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="in app logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="50q-Ww-XCc">
                                 <rect key="frame" x="94" y="60" width="187.5" height="115"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="188" id="D0U-fH-mI2"/>
@@ -1242,7 +1237,7 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Chm-rN-0Mk">
                                 <rect key="frame" x="0.0" y="64" width="375" height="241"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello Alice!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2L-Pq-Uka">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello Alice!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2L-Pq-Uka">
                                         <rect key="frame" x="15" y="15" width="107" height="50"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -1365,7 +1360,7 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6jD-e4-j0s">
                                 <rect key="frame" x="0.0" y="70" width="375" height="167"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoginHeader" translatesAutoresizingMaskIntoConstraints="NO" id="Eg5-0d-XCR">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="in app logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Eg5-0d-XCR">
                                         <rect key="frame" x="94" y="25" width="187.5" height="117"/>
                                     </imageView>
                                 </subviews>
@@ -1662,8 +1657,8 @@ Register for RED camp here and get updates and other fun stuff all from your pho
         <image name="Home_Programme" width="204" height="206"/>
         <image name="Icon_SideMenu" width="18" height="16"/>
         <image name="LoginBG" width="185" height="321"/>
-        <image name="LoginHeader" width="214" height="145"/>
         <image name="Logo_app" width="170" height="168"/>
         <image name="Specimen_Card" width="243" height="161"/>
+        <image name="in app logo.png" width="1200" height="1184"/>
     </resources>
 </document>

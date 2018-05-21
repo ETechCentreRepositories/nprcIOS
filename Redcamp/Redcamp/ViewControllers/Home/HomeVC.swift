@@ -12,9 +12,8 @@ import ENSwiftSideMenu
 class HomeVC: UIViewController,ENSideMenuDelegate,UICollectionViewDelegate,UICollectionViewDataSource
 {
 
-    @IBOutlet weak var imageofSparta: UIImageView!
+   
     @IBOutlet weak var colHome: UICollectionView!
-    @IBOutlet weak var scrollLoginBanner: UIScrollView!
     @IBOutlet weak var viewScrollContent: UIView!
     @IBOutlet weak var lblProfileName: UILabel!
     
@@ -89,20 +88,20 @@ class HomeVC: UIViewController,ENSideMenuDelegate,UICollectionViewDelegate,UICol
             
             if (indexPath.row == 0)
             {
-                homeCell.imgBackGround.image = UIImage(named: "Home_Programme")
+                homeCell.imgBackGround.image = UIImage(named: "campporgramme.png")
             }
             if (indexPath.row == 1)
             {
-                homeCell.imgBackGround.image = UIImage(named: "Home_Discoery")
+                homeCell.imgBackGround.image = UIImage(named: "pathofdiscovery.png")
             }
             if (indexPath.row == 2)
             {
-                homeCell.imgBackGround.image = UIImage(named: "Home_FAQ")
+                homeCell.imgBackGround.image = UIImage(named: "campusexplorer.png")
                 
             }
             if (indexPath.row == 3)
             {
-                homeCell.imgBackGround.image = UIImage(named: "Home_Contact")
+                homeCell.imgBackGround.image = UIImage(named: "askredcamp.png")
             }
         }
         

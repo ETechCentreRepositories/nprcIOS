@@ -110,16 +110,14 @@ class LoginAction: UIViewController,UITextFieldDelegate {
         {
         case txtEmail:
             txtPassword.becomeFirstResponder()
-            return true
             break
         case txtPassword:
             txtPassword.resignFirstResponder()
-            return true
             break
         default:
-            return true
             break
         }
+        return true
     }
     
     override func didReceiveMemoryWarning() {
@@ -163,7 +161,8 @@ class LoginAction: UIViewController,UITextFieldDelegate {
         ]*/
         let parameters: Parameters=[
             "email":"bryanlowsk@gmail.com",//txtEmail.text!,
-            "password":"Bryan987"//txtPassword.text!
+            "password":"Bryan987",//txtPassword.text!
+            "type":"3"
         ]
         let URL_USER_REGISTER = "http://ehostingcentre.com/redcampadmin/API/login.php"
         Alamofire.request(URL_USER_REGISTER, method: .post, parameters: parameters).responseJSON
@@ -185,6 +184,8 @@ class LoginAction: UIViewController,UITextFieldDelegate {
                             UserDefaults.standard.set(userDetails[0].dob, forKey: "dob")
                             UserDefaults.standard.set(userDetails[0].mobile, forKey: "mobile")
                             
+                            UserDefaults.standard.set("1", forKey: "loginStatus")
+                            UserDefaults.standard.synchronize()
                             let homeVC = self.storyboard?.instantiateViewController(withIdentifier: "MyNavigationController") as! MyNavigationController
                             self.present(homeVC, animated: true, completion: nil)
                             
