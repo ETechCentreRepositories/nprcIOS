@@ -14,18 +14,17 @@ class LoginAction: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var btnLogin: UIButton!
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var txtEmail: UITextField!
+    @IBOutlet weak var scrollLogin: UIScrollView!
     
-    @IBOutlet var keyboardHeightLayoutConstraint: NSLayoutConstraint?
+   // @IBOutlet var keyboardHeightLayoutConstraint: NSLayoutConstraint?
     
+    weak var activeField: UITextField?
     
     var email_id = ""
     var password = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(LoginAction.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(LoginAction.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     
         // Do any additional setup after loading the view.
     }
@@ -48,6 +47,81 @@ class LoginAction: UIViewController,UITextFieldDelegate {
         
         
     }
+    
+    func setupViewResizerOnKeyboardShown()
+    {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(self.keyboardWillShowForResizing),
+                                               name: Notification.Name.UIKeyboardWillShow,
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(self.keyboardWillHideForResizing),
+                                               name: Notification.Name.UIKeyboardWillHide,
+                                               object: nil)
+    }
+    
+    @objc func keyboardWillShowForResizing(notification: Notification)
+    {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue,
+            let _ = self.view.window?.frame
+        {
+            if let activeField = self.activeField
+            {
+                let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height, right: 0.0)
+                self.scrollLogin.contentInset = contentInsets
+                self.scrollLogin.scrollIndicatorInsets = contentInsets
+                var aRect = self.view.frame
+                aRect.size.height -= keyboardSize.size.height
+                if (!aRect.contains(activeField.frame.origin)) {
+                    self.scrollLogin.scrollRectToVisible(activeField.frame, animated: true)
+                }
+            }
+            
+        } else {
+            debugPrint("We're showing the keyboard and either the keyboard size or window is nil: panic widely.")
+        }
+    }
+    
+    @objc func keyboardWillHideForResizing(notification: Notification)
+    {
+        if ((notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue) != nil
+        {
+            let contentInsets = UIEdgeInsets.zero
+            self.scrollLogin.contentInset = contentInsets
+            self.scrollLogin.scrollIndicatorInsets = contentInsets
+            
+        } else {
+            debugPrint("We're about to hide the keyboard and the keyboard size is nil. Now is the rapture.")
+        }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField)
+    {
+        self.activeField = nil
+    }
+    func textFieldDidBeginEditing(_ textField: UITextField)
+    {
+        self.activeField = textField
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    {
+        switch textField
+        {
+        case txtEmail:
+            txtPassword.becomeFirstResponder()
+            return true
+            break
+        case txtPassword:
+            txtPassword.resignFirstResponder()
+            return true
+            break
+        default:
+            return true
+            break
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -162,22 +236,7 @@ class LoginAction: UIViewController,UITextFieldDelegate {
         self.dismiss(animated:true, completion: nil)
     }
     
-    @objc func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            
-            if self.view.frame.origin.y == 0 {
-                self.view.frame.origin.y += (self.btnLogin.frame.origin.y - keyboardSize.height) - 35
-            }
-        }
-    }
-    
-    @objc func keyboardWillHide(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y != 0{
-                self.view.frame.origin.y -= (self.btnLogin.frame.origin.y - keyboardSize.height) + 35
-            }
-        }
-    }
+   
 }
 //--------------------
 enum APIaddress: String
