@@ -103,10 +103,10 @@ class SideMenuVC: UIViewController,UITableViewDelegate,UITableViewDataSource
 
     @IBAction func showProfile(_ sender: Any)
     {
-         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
-         var destViewController : UIViewController
-         destViewController = mainStoryboard.instantiateViewController(withIdentifier: "ProfileVC")
-         sideMenuController()?.setContentViewController(destViewController)
+//         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
+//         var destViewController : UIViewController
+//         destViewController = mainStoryboard.instantiateViewController(withIdentifier: "ProfileVC")
+//         sideMenuController()?.setContentViewController(destViewController)
     }
     
     

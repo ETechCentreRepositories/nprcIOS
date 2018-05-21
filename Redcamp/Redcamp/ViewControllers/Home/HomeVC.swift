@@ -12,8 +12,8 @@ import ENSwiftSideMenu
 class HomeVC: UIViewController,ENSideMenuDelegate,UICollectionViewDelegate,UICollectionViewDataSource
 {
 
+    @IBOutlet weak var imageofSparta: UIImageView!
     @IBOutlet weak var colHome: UICollectionView!
-    @IBOutlet weak var pgCtrlLogin: UIPageControl!
     @IBOutlet weak var scrollLoginBanner: UIScrollView!
     @IBOutlet weak var viewScrollContent: UIView!
     @IBOutlet weak var lblProfileName: UILabel!
@@ -36,6 +36,7 @@ class HomeVC: UIViewController,ENSideMenuDelegate,UICollectionViewDelegate,UICol
 
     override func viewWillAppear(_ animated: Bool)
     {
+                
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         layout.itemSize = CGSize(width: screenWidth/2, height: screenHeight/3.8)

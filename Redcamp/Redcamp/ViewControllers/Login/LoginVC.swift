@@ -10,7 +10,7 @@ import UIKit
 import FBSDKLoginKit
 import GoogleSignIn
 
-class LoginVC: UIViewController {
+class LoginVC: UIViewController,GIDSignInDelegate,GIDSignInUIDelegate {
 
     @IBOutlet weak var btnFacebook: UIButton!
     @IBOutlet weak var btnGoogle: UIButton!
@@ -36,6 +36,43 @@ class LoginVC: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    @IBAction func googleSignIn(_ sender: UIButton) {
+        GIDSignIn.sharedInstance().delegate=self
+        GIDSignIn.sharedInstance().uiDelegate=self
+        GIDSignIn.sharedInstance().signIn()
+    }
+    
+    func sign(inWillDispatch signIn: GIDSignIn!, error: Error!) {
+    }
+    
+    func sign(_ signIn: GIDSignIn!,
+              present viewController: UIViewController!) {
+        self.present(viewController, animated: true, completion: nil)
+    }
+    
+    func sign(_ signIn: GIDSignIn!,
+              dismiss viewController: UIViewController!) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    public func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!,
+                       withError error: Error!) {
+        if (error == nil) {
+            let fullName = user.profile.name!
+            let email = user.profile.email!
+            
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            let SignUpVController = storyBoard.instantiateViewController(withIdentifier: "SignUpVC") as! SignUpVC
+            SignUpVController.email_id = email
+            SignUpVController.firstName = fullName
+            self.present(SignUpVController, animated:true, completion:nil)
+
+            
+        } else {
+            print("\(error)")
+        }
+    }
+    
     
     @objc func facebookLogin(){
         FBSDKLoginManager().logIn(withReadPermissions: ["email","public_profile"], from: self)
@@ -59,28 +96,15 @@ class LoginVC: UIViewController {
             print(result)
             let results : [String: String] = result as! [String: String]
             let email = results["email"]!
-            var components = results["name"]!.components(separatedBy: " ")
-            var first_name = ""
-            var last_name = ""
-            if(components.count > 0)
-            {
-                first_name = components.removeFirst()
-                last_name = components.joined(separator: " ")
-            }
-            
+            let name = results["name"]!
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
             let SignUpVController = storyBoard.instantiateViewController(withIdentifier: "SignUpVC") as! SignUpVC
             SignUpVController.email_id = email
-            SignUpVController.firstName = first_name
-            SignUpVController.lastName = last_name
+            SignUpVController.firstName = name
             self.present(SignUpVController, animated:true, completion:nil)
 
 
         }
-    }
-    
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        print("User \(user)")
     }
     
     @IBAction func Login(_ sender: UIButton)

@@ -15,14 +15,25 @@ class LoginAction: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var txtEmail: UITextField!
     
+    @IBOutlet var keyboardHeightLayoutConstraint: NSLayoutConstraint?
+    
+    
+    var email_id = ""
+    var password = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(LoginAction.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(LoginAction.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    
         // Do any additional setup after loading the view.
     }
 
     override func viewWillAppear(_ animated: Bool)
     {
+        //registerForKeyboardNotifications()
+        
         txtPassword.borderStyle = .line
         txtPassword.layer.borderColor = UIColor.white.cgColor
         txtPassword.layer.borderWidth = 1.5
@@ -42,30 +53,71 @@ class LoginAction: UIViewController,UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    func getDetails(){
+        if txtEmail.text!.isEmpty{
+            let alert = UIAlertController(title: "Email Id", message: "Email Id cannot be Empty.", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            
+        }else if txtPassword.text!.isEmpty{
+            let alert = UIAlertController(title: "Password", message: "Password cannot be Empty.", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }else{
+            email_id = txtEmail.text!
+            password = txtPassword.text!
+            callServerLogin()
+        }
+    }
+    
+    @IBAction func forgetpass(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Forgot Passwrod", message: "Please email redcamp@np.edu.sg with your new password and we'll take it from there !", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+
+    
     @IBAction func Login(_ sender: UIButton)
     {
+        getDetails()
+    }
+    
+    func callServerLogin(){
         let parameters: Parameters=[
-            "email":"bryanlowsk@gmail.com",//txtEmail.text!,
-            "password":"Bryan987"//txtPassword.text!
+            "email" : email_id,
+            "password" : password
         ]
-        let URL_USER_REGISTER = "http://bryanlowsk.com/RedCamp/API/login.php"
+        let URL_USER_REGISTER = "http://ehostingcentre.com/redcampadmin/API/login.php"
         Alamofire.request(URL_USER_REGISTER, method: .post, parameters: parameters).responseJSON
-        {
-            response in
-            //printing response
-            print(" URL LOGIN RESPONSE \(response)")
-            let result = self.doCodable(inputData: response.data!, inputAdress: "login")
-            let userDetails = result as! [UserDetails]
-            print(userDetails[0])
-            
-            UserDefaults.standard.set(userDetails[0].name, forKey: "name")
-            UserDefaults.standard.set(userDetails[0].email, forKey: "email")
-            UserDefaults.standard.set(userDetails[0].dob, forKey: "dob")
-            UserDefaults.standard.set(userDetails[0].mobile, forKey: "mobile")
-            
-            let homeVC = self.storyboard?.instantiateViewController(withIdentifier: "MyNavigationController") as! MyNavigationController
-            self.present(homeVC, animated: true, completion: nil)
- 
+            {
+                response in
+                //printing response
+                print("Result :: \(response)")
+                if response.result.isSuccess{
+                    if let json = response.result.value {
+                        let result = json as? [String:AnyObject]
+                        if result!["status"] as? Int == 200{
+                            print("STATUS Success")
+                            let result = self.doCodable(inputData: response.data!, inputAdress: "login")
+                            let userDetails = result as! [UserDetails]
+                            print(userDetails[0])
+                            
+                            UserDefaults.standard.set(userDetails[0].name, forKey: "name")
+                            UserDefaults.standard.set(userDetails[0].email, forKey: "email")
+                            UserDefaults.standard.set(userDetails[0].dob, forKey: "dob")
+                            UserDefaults.standard.set(userDetails[0].mobile, forKey: "mobile")
+                            
+                            let homeVC = self.storyboard?.instantiateViewController(withIdentifier: "MyNavigationController") as! MyNavigationController
+                            self.present(homeVC, animated: true, completion: nil)
+                            
+                        }else{
+                            let alert = UIAlertController(title: "Wrong Passwrod", message: "Username and Password is incorrect.", preferredStyle: UIAlertControllerStyle.alert)
+                            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                            self.present(alert, animated: true, completion: nil)
+                            
+                        }
+                    }
+                }
         }
     }
     
@@ -106,27 +158,21 @@ class LoginAction: UIViewController,UITextFieldDelegate {
         self.dismiss(animated:true, completion: nil)
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool
-    {
-        switch textField
-        {
-        case txtEmail:
-            txtPassword.becomeFirstResponder()
-            break
-        case txtPassword:
-             txtPassword.resignFirstResponder()
-            break
-        
-        default:
-            return true
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y += (self.btnLogin.frame.origin.y - keyboardSize.height) - 35
+            }
         }
-        return true
     }
     
-    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool
-    {
-        //txtViewContent.setContentOffset(textField.bounds.origin, animated: true)
-        return true
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y != 0{
+                self.view.frame.origin.y -= (self.btnLogin.frame.origin.y - keyboardSize.height) + 35
+            }
+        }
     }
 }
 //--------------------

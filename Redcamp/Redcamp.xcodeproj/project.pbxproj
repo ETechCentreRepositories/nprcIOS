@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48228F5620AEAE41007CFF7D /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 48228F5520AEAE41007CFF7D /* libstdc++.tbd */; };
+		48228F5820AEAE54007CFF7D /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48228F5720AEAE54007CFF7D /* CoreImage.framework */; };
+		48228F5A20AEAE61007CFF7D /* TesseractOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48228F5920AEAE61007CFF7D /* TesseractOCR.framework */; };
+		48228F5C20AEC2C4007CFF7D /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 48228F5B20AEC2C3007CFF7D /* tessdata */; };
+		48228F6820B01A8A007CFF7D /* spartan.png in Resources */ = {isa = PBXBuildFile; fileRef = 48228F6720B01A89007CFF7D /* spartan.png */; };
 		482A33C120AC6A2C00D6A21C /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 482A33BD20AC6A2B00D6A21C /* FBSDKLoginKit.framework */; };
 		482A33C220AC6A2C00D6A21C /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 482A33BE20AC6A2B00D6A21C /* FBSDKShareKit.framework */; };
 		482A33C320AC6A2C00D6A21C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 482A33BF20AC6A2B00D6A21C /* Bolts.framework */; };
@@ -39,6 +44,11 @@
 
 /* Begin PBXFileReference section */
 		22A3B526BCEFF8CFD2ED6014 /* Pods-Redcamp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Redcamp.release.xcconfig"; path = "Pods/Target Support Files/Pods-Redcamp/Pods-Redcamp.release.xcconfig"; sourceTree = "<group>"; };
+		48228F5520AEAE41007CFF7D /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		48228F5720AEAE54007CFF7D /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		48228F5920AEAE61007CFF7D /* TesseractOCR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TesseractOCR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		48228F5B20AEC2C3007CFF7D /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
+		48228F6720B01A89007CFF7D /* spartan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spartan.png; sourceTree = "<group>"; };
 		482A33BD20AC6A2B00D6A21C /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		482A33BE20AC6A2B00D6A21C /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		482A33BF20AC6A2B00D6A21C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -78,6 +88,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48228F5A20AEAE61007CFF7D /* TesseractOCR.framework in Frameworks */,
+				48228F5820AEAE54007CFF7D /* CoreImage.framework in Frameworks */,
+				48228F5620AEAE41007CFF7D /* libstdc++.tbd in Frameworks */,
 				482A33C420AC6A2C00D6A21C /* FBSDKCoreKit.framework in Frameworks */,
 				482A33C120AC6A2C00D6A21C /* FBSDKLoginKit.framework in Frameworks */,
 				8A152FEA230B8624D7B54CC7 /* Pods_Redcamp.framework in Frameworks */,
@@ -101,6 +114,9 @@
 		4F17B53041577A5BEAFDF152 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				48228F5920AEAE61007CFF7D /* TesseractOCR.framework */,
+				48228F5720AEAE54007CFF7D /* CoreImage.framework */,
+				48228F5520AEAE41007CFF7D /* libstdc++.tbd */,
 				482A33BF20AC6A2B00D6A21C /* Bolts.framework */,
 				482A33C020AC6A2C00D6A21C /* FBSDKCoreKit.framework */,
 				482A33BD20AC6A2B00D6A21C /* FBSDKLoginKit.framework */,
@@ -114,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				7CBB71FE20A290EC001476E9 /* Redcamp */,
+				48228F5B20AEC2C3007CFF7D /* tessdata */,
 				7CBB71FD20A290EC001476E9 /* Products */,
 				22A6AAE4AAB9DCFF8AF1B4F5 /* Pods */,
 				4F17B53041577A5BEAFDF152 /* Frameworks */,
@@ -141,6 +158,7 @@
 				7CBB720820A290ED001476E9 /* LaunchScreen.storyboard */,
 				7CBB720B20A290ED001476E9 /* Info.plist */,
 				7CBB721A20A2E30A001476E9 /* Text-Box-Frame-PNG-Photo@3x.png */,
+				48228F6720B01A89007CFF7D /* spartan.png */,
 				7C5ED8A920AD2BB6001D2B8F /* logout.png */,
 				7CBB721C20A2E315001476E9 /* NoPath@3x.png */,
 				7CBB721D20A2E317001476E9 /* redcamp-spartans copy@3x.png */,
@@ -285,12 +303,14 @@
 			files = (
 				7CBB720A20A290ED001476E9 /* LaunchScreen.storyboard in Resources */,
 				7CBB722120A2EE7A001476E9 /* Spartens@3x.png in Resources */,
+				48228F5C20AEC2C4007CFF7D /* tessdata in Resources */,
 				7CBB721E20A2E31A001476E9 /* NoPath@3x.png in Resources */,
 				7CBB721F20A2E31A001476E9 /* redcamp-spartans copy@3x.png in Resources */,
 				7CBB721B20A2E30A001476E9 /* Text-Box-Frame-PNG-Photo@3x.png in Resources */,
 				7CBB720720A290ED001476E9 /* Assets.xcassets in Resources */,
 				7C5ED8AA20AD2BB7001D2B8F /* logout.png in Resources */,
 				7CBB720520A290ED001476E9 /* Main.storyboard in Resources */,
+				48228F6820B01A8A007CFF7D /* spartan.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,6 +350,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/TesseractOCRiOS/TesseractOCR.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -341,6 +362,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TesseractOCR.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -444,6 +466,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -501,6 +524,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -527,6 +551,7 @@
 				CODE_SIGN_ENTITLEMENTS = Redcamp/Redcamp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2X8GU4BVVX;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -548,6 +573,7 @@
 				CODE_SIGN_ENTITLEMENTS = Redcamp/Redcamp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2X8GU4BVVX;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

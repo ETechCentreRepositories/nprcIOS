@@ -120,7 +120,7 @@ class ProgrammeVC: UIViewController,UITableViewDelegate,UITableViewDataSource
             cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
             cell!.backgroundColor = UIColor.white
             cell!.textLabel?.textColor = UIColor.darkGray
-            cell!.textLabel?.font = UIFont.systemFont(ofSize: 12.0)
+            cell!.textLabel?.font = UIFont.systemFont(ofSize: 14.0)
         }
         
         cell!.textLabel?.text = arrScheduleDay[indexPath.row]
