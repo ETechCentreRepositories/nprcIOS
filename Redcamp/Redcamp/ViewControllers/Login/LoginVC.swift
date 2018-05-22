@@ -138,8 +138,8 @@ class LoginVC: UIViewController,GIDSignInDelegate,GIDSignInUIDelegate {
                 print("Result :: \(response)")
                 if response.result.isSuccess{
                     if let json = response.result.value {
-                        let result = json as? [String:AnyObject]
-                        if result!["status"] as? Int == 200{
+                        let resultss = json as? [String:AnyObject]
+                        if resultss!["status"] as? Int == 200{
                             print("STATUS Success")
                             let result = self.doCodable(inputData: response.data!, inputAdress: "login")
                             let userDetails = result as! [UserDetails]
@@ -153,12 +153,29 @@ class LoginVC: UIViewController,GIDSignInDelegate,GIDSignInUIDelegate {
                             UserDefaults.standard.set("1", forKey: "loginStatus")
                             UserDefaults.standard.synchronize()
                             
-                            Success = true
+                            print("METHOD TYPE ::\(resultss!["method"] as? String)")
+                            print("TYPE \(Type)")
+                            
+                            if resultss!["method"] as? String == "facebook" && Type == 1{
+                                print("Facebook")
+                                let homeVC = self.storyboard?.instantiateViewController(withIdentifier: "MyNavigationController") as! MyNavigationController
+                                self.present(homeVC, animated: true, completion: nil)
+                            }else if resultss!["method"] as? String == "google" && Type == 2{
+                                 print("Google")
+                                let homeVC = self.storyboard?.instantiateViewController(withIdentifier: "MyNavigationController") as! MyNavigationController
+                                self.present(homeVC, animated: true, completion: nil)
+                            }else{
+                                 print("Normal")
+                                let alert = UIAlertController(title: "Incorect Login Method", message: "Please use the same login method that you used for Registration.", preferredStyle: UIAlertControllerStyle.alert)
+                                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                                self.present(alert, animated: true, completion: nil)
+                            }
+                            
                             
                             let homeVC = self.storyboard?.instantiateViewController(withIdentifier: "MyNavigationController") as! MyNavigationController
                             self.present(homeVC, animated: true, completion: nil)
                             
-                        }else if result!["status"] as? Int == 201{
+                        }else if resultss!["status"] as? Int == 201{
                             let alert = UIAlertController(title: "Almost There!", message: "Your application to Red Camp is still pending\n\nIf you have not submitted your 'O'level 2018 entry proof, please do so to redcamp@np.edu.sg\n\nThank you for your patience!", preferredStyle: UIAlertControllerStyle.alert)
                             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
                             self.present(alert, animated: true, completion: nil)
