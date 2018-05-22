@@ -234,7 +234,7 @@ class SignUpVC: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPick
     
     override func viewWillAppear(_ animated: Bool)
     {
-        
+        txtnric.delegate = self
         btnSignUp.layer.cornerRadius = 10
         
         txtPassword.setCustomBorder()
@@ -257,7 +257,7 @@ class SignUpVC: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPick
                                                             attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
         txtFirstName.attributedPlaceholder = NSAttributedString(string: " Full Name",
                                                             attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
-        txtnric.attributedPlaceholder = NSAttributedString(string: " NRIC",
+        txtnric.attributedPlaceholder = NSAttributedString(string: " NRIC (XXXXX)",
                                                                 attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
         txtBirthDate.attributedPlaceholder = NSAttributedString(string: " Date of Birth (DD-MM-YYYY)",
                                                             attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
@@ -284,25 +284,25 @@ class SignUpVC: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPick
         }
     }
     
-    func showAnimate()
-    {
-        self.constPickBottom.constant = 400
-        UIView.animate(withDuration: 0.8, animations: {
-            self.view.alpha = 1.0
-            self.view.transform =  CGAffineTransform(scaleX: 1.0, y: 1.0)
-        }, completion:{(finished : Bool) in
-            if(finished)
-            {
-               self.constPickBottom.constant = 0
-            }
-        })
-    }
+//    func showAnimate()
+//    {
+//       // self.constPickBottom.constant = 400
+//        UIView.animate(withDuration: 0.8, animations: {
+//            self.view.alpha = 1.0
+//            self.view.transform =  CGAffineTransform(scaleX: 1.0, y: 1.0)
+//        }, completion:{(finished : Bool) in
+//            if(finished)
+//            {
+//               self.constPickBottom.constant = 0
+//            }
+//        })
+//    }
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let text = txtnric.text else { return true }
         if textField == self.txtnric{
             let newLength = text.characters.count + string.characters.count - range.length
-             return newLength <= 4 // Bool
+             return newLength <= 5 // Bool
         }
         
        return true
@@ -322,6 +322,7 @@ class SignUpVC: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPick
     
     func createDatePicker(){
         datePicker.datePickerMode = .date
+        datePicker.maximumDate = Date()
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
         
@@ -337,6 +338,7 @@ class SignUpVC: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPick
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .none
         dob = datePicker.date
+        dateFormatter.dateFormat = "dd-MM-yyyy"
         txtBirthDate.text = dateFormatter.string(from: datePicker.date)
         
         
@@ -454,7 +456,8 @@ class SignUpVC: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPick
             "school":secSchool,
             "diet":dietSelected,
             "password":password,
-            "statuses_id":status
+            "statuses_id":status,
+            "method":"normal"
         ]
         print("Sign up method back ")
         Alamofire.request(URL_USER_REGISTER, method: .post, parameters: parameters).responseJSON
@@ -468,8 +471,9 @@ class SignUpVC: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPick
                         let result = json as? [String:AnyObject]
                         if result!["status"] as? Int == 200{
                            
-                            let alert = UIAlertController(title: "Successful", message: String(describing: result!["display_message"]!), preferredStyle: UIAlertControllerStyle.alert)
+                            let alert = UIAlertController(title: String(describing: result!["display_title"]!), message: String(describing: result!["display_message"]!), preferredStyle: UIAlertControllerStyle.alert)
                             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default , handler: { (success) in
+                                
                                 let LoginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
                                 self.present(LoginVC, animated: true, completion: nil)
                             }) )

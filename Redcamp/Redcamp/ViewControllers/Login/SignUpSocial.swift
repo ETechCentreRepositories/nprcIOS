@@ -8,6 +8,8 @@
 
 import UIKit
 import Alamofire
+
+
 class SignUpSocial: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource {
     let diet = ["None","Vegetarian"]
     let school = ["ADMIRALTY SECONDARY SCHOOL"
@@ -177,6 +179,7 @@ class SignUpSocial: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UI
     var OCR = ""
     var year = 1
     var terms = false
+    var method = ""
     
 
     
@@ -207,8 +210,10 @@ class SignUpSocial: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UI
         createDatePicker()
         
         thePicker.delegate = self
-        //        txtDietryReq.inputView = thePicker
-        //        txtSecSchool.inputView = thePicker
+        txtDietryReq.inputView = thePicker
+        txtSecSchool.inputView = thePicker
+        txtDietryReq.delegate = self
+        txtSecSchool.delegate = self
         
         // Do any additional setup after loading the view.
     }
@@ -223,7 +228,7 @@ class SignUpSocial: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UI
         
         btnSignUp.layer.cornerRadius = 10
         
-    
+        txtnric.delegate = self
         txtFirstName.setCustomBorder()
         txtnric.setCustomBorder()
         txtBirthDate.setCustomBorder()
@@ -231,11 +236,9 @@ class SignUpSocial: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UI
         txtSecSchool.setCustomBorder()
         txtContact.setCustomBorder()
         
-      
-        
         txtFirstName.attributedPlaceholder = NSAttributedString(string: " Full Name",
                                                                 attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
-        txtnric.attributedPlaceholder = NSAttributedString(string: " NRIC",
+        txtnric.attributedPlaceholder = NSAttributedString(string: " NRIC (XXXXX)",
                                                            attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
         txtBirthDate.attributedPlaceholder = NSAttributedString(string: " Date of Birth (DD-MM-YYYY)",
                                                                 attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
@@ -248,7 +251,7 @@ class SignUpSocial: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UI
         
         self.setupViewResizerOnKeyboardShown()
         self.scrollSignUp.scrollsToTop = true
-        self.removeAnimate()
+       // self.removeAnimate()
         
         
         if !firstName.isEmpty{
@@ -259,44 +262,46 @@ class SignUpSocial: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UI
         }
     }
     
-    func showAnimate()
-    {
-        self.constPickBottom.constant = 400
-        UIView.animate(withDuration: 0.8, animations: {
-            self.view.alpha = 1.0
-            self.view.transform =  CGAffineTransform(scaleX: 1.0, y: 1.0)
-        }, completion:{(finished : Bool) in
-            if(finished)
-            {
-                self.constPickBottom.constant = 0
-            }
-        })
-    }
+//    func showAnimate()
+//    {
+//        self.constPickBottom.constant = 400
+//        UIView.animate(withDuration: 0.8, animations: {
+//            self.view.alpha = 1.0
+//            self.view.transform =  CGAffineTransform(scaleX: 1.0, y: 1.0)
+//        }, completion:{(finished : Bool) in
+//            if(finished)
+//            {
+//                self.constPickBottom.constant = 0
+//            }
+//        })
+//    }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let text = txtnric.text else { return true }
         if textField == self.txtnric{
             let newLength = text.characters.count + string.characters.count - range.length
-            return newLength <= 4 // Bool
+            print(newLength)
+            return newLength <= 5 // Bool
         }
         
         return true
     }
     
-    func removeAnimate()
-    {
-        self.constPickBottom.constant = 0
-        UIView.animate(withDuration: 0.8, animations: {
-        }, completion:{(finished : Bool) in
-            if(finished)
-            {
-                self.constPickBottom.constant = 400
-            }
-        })
-    }
+//    func removeAnimate()
+//    {
+//        self.constPickBottom.constant = 0
+//        UIView.animate(withDuration: 0.8, animations: {
+//        }, completion:{(finished : Bool) in
+//            if(finished)
+//            {
+//                self.constPickBottom.constant = 400
+//            }
+//        })
+//    }
     
     func createDatePicker(){
         datePicker.datePickerMode = .date
+        datePicker.maximumDate = Date()
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
         
@@ -312,6 +317,8 @@ class SignUpSocial: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UI
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .none
         dob = datePicker.date
+        
+        dateFormatter.dateFormat = "dd-MM-yyyy"
         txtBirthDate.text = dateFormatter.string(from: datePicker.date)
         
         
@@ -429,7 +436,8 @@ class SignUpSocial: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UI
             "school":secSchool,
             "diet":dietSelected,
             "password":password,
-            "statuses_id":status
+            "statuses_id":status,
+            "method":method
         ]
         print("Sign up method back ")
         Alamofire.request(URL_USER_REGISTER, method: .post, parameters: parameters).responseJSON
@@ -443,7 +451,7 @@ class SignUpSocial: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UI
                         let result = json as? [String:AnyObject]
                         if result!["status"] as? Int == 200{
                             
-                            let alert = UIAlertController(title: "Successful", message: String(describing: result!["display_message"]!), preferredStyle: UIAlertControllerStyle.alert)
+                            let alert = UIAlertController(title: String(describing: result!["display_title"]!), message: String(describing: result!["display_message"]!), preferredStyle: UIAlertControllerStyle.alert)
                             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default , handler: { (success) in
                                 let LoginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
                                 self.present(LoginVC, animated: true, completion: nil)
@@ -559,12 +567,14 @@ class SignUpSocial: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UI
         {
             txtDietryReq.becomeFirstResponder()
             pickerTag = "diet"
+            print("PICKER View :\(pickerTag)")
             //self.showAnimate()
         }
         else if textField == self.txtSecSchool
         {
             txtSecSchool.becomeFirstResponder()
             pickerTag = "school"
+            print("PICKER View :\(pickerTag)")
             // self.showAnimate()
         }
         else
@@ -624,7 +634,6 @@ class SignUpSocial: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UI
         
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        
         
         if (pickerTag == "diet"){
             return diet[row]

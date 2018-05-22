@@ -160,8 +160,8 @@ class LoginAction: UIViewController,UITextFieldDelegate {
             "password" : password
         ]*/
         let parameters: Parameters=[
-            "email":"bryanlowsk@gmail.com",//txtEmail.text!,
-            "password":"Bryan987",//txtPassword.text!
+            "email":txtEmail.text!,//"bryanlowsk@gmail.com",//txtEmail.text!,
+            "password":txtPassword.text!,//"Bryan987",//txtPassword.text!
             "type":"3"
         ]
         let URL_USER_REGISTER = "http://ehostingcentre.com/redcampadmin/API/login.php"
@@ -234,6 +234,7 @@ class LoginAction: UIViewController,UITextFieldDelegate {
 
     @IBAction func backAction(_ sender: Any)
     {
+        print("Pressed")
         self.dismiss(animated:true, completion: nil)
     }
     

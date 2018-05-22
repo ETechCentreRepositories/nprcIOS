@@ -74,6 +74,23 @@ class HomeVC: UIViewController,ENSideMenuDelegate,UICollectionViewDelegate,UICol
         return 4
     }
     
+    @IBAction func share(_ sender: UIBarButtonItem) {
+        // text to share
+        let text = "Download the RedCamp app from the link\n     http://www.np.edu.sg/redcamp"
+        
+        // set up activity view controller
+        let textToShare = [ text ]
+        let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
+        
+        // exclude some activity types from the list (optional)
+        activityViewController.excludedActivityTypes = [ UIActivityType.airDrop, UIActivityType.postToFacebook, UIActivityType.message,UIActivityType.postToTwitter ]
+        
+        // present the view controller
+        self.present(activityViewController, animated: true, completion: nil)
+
+        
+    }
     /* func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
      {
      let size = CGSize(width: collectionView.bounds.size.width/3 - 10, height: collectionView.bounds.size.height/3 - 10)

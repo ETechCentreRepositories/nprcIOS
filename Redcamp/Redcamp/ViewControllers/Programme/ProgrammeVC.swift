@@ -21,7 +21,7 @@ class ProgrammeVC: UIViewController,UITableViewDelegate,UITableViewDataSource
                            "10:00am Path of Discovery 1",
                            "01:00pm Lunch",
                            "02:30pm Path of Discovery 2",
-                           "05:30pm Course % Admission Talk",
+                           "05:30pm Course & Admission Talk",
                            "06:00pm Mass Dance",
                            "06:30pm End of Day 1"]
     
@@ -95,13 +95,13 @@ class ProgrammeVC: UIViewController,UITableViewDelegate,UITableViewDataSource
     {
         if day == 1
         {
-            return "20 NOVEMBER TUESDAY"
+            return " 20 NOVEMBER TUESDAY"
         }else if day == 2
         {
-            return "21 NOVEMBER WEDNESDAY"
+            return " 21 NOVEMBER WEDNESDAY"
         }else
         {
-            return "22 NOVEMBER THURSDAY"
+            return " 22 NOVEMBER THURSDAY"
         }
         //return "20 NOVEMBER TUESDAY"
     }
