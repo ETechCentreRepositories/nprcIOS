@@ -602,12 +602,14 @@ class SignUpVC: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPick
         {
             txtDietryReq.becomeFirstResponder()
             pickerTag = "diet"
+            thePicker.reloadAllComponents()
             //self.showAnimate()
         }
         else if textField == self.txtSecSchool
         {
             txtSecSchool.becomeFirstResponder()
             pickerTag = "school"
+            thePicker.reloadAllComponents()
            // self.showAnimate()
         }
         else
