@@ -27,6 +27,9 @@ class WelcomeVC: UIViewController {
     }
     
 
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     /*
     // MARK: - Navigation
 

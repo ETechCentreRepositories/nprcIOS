@@ -18,7 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
+    {
         
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         GIDSignIn.sharedInstance().clientID = "495950529646-kg0p4ho634uu70l8296i2aid8ia607ct.apps.googleusercontent.com"
@@ -50,6 +51,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 self.window?.makeKeyAndVisible()
             }
         }
+        UIApplication.shared.statusBarStyle = .lightContent
+        
         return true
     }
     

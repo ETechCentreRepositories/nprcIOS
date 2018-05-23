@@ -29,6 +29,9 @@ class LoginAction: UIViewController,UITextFieldDelegate {
         // Do any additional setup after loading the view.
     }
 
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     override func viewWillAppear(_ animated: Bool)
     {
         //registerForKeyboardNotifications()
@@ -45,7 +48,8 @@ class LoginAction: UIViewController,UITextFieldDelegate {
         txtEmail.attributedPlaceholder = NSAttributedString(string: " Email",
                                                                attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
         
-        
+        self.setupViewResizerOnKeyboardShown()
+        self.scrollLogin.scrollsToTop = true
     }
     
     func setupViewResizerOnKeyboardShown()
@@ -156,8 +160,8 @@ class LoginAction: UIViewController,UITextFieldDelegate {
     
     func callServerLogin(){
        /* let parameters: Parameters=[
-            "email" : email_id,
-            "password" : password
+            "email" : "bryanlowsk@gmail.com",
+            "password" : "Bryan987"
         ]*/
         let parameters: Parameters=[
             "email":txtEmail.text!,//"bryanlowsk@gmail.com",//txtEmail.text!,

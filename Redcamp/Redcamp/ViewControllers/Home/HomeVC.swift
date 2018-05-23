@@ -33,6 +33,9 @@ class HomeVC: UIViewController,ENSideMenuDelegate,UICollectionViewDelegate,UICol
         // Do any additional setup after loading the view.
     }
 
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     override func viewWillAppear(_ animated: Bool)
     {
                 
@@ -180,7 +183,7 @@ class HomeVC: UIViewController,ENSideMenuDelegate,UICollectionViewDelegate,UICol
                 webVC.currentURL = "https://www.np.edu.sg/redcamp/pages/askredcamp.aspx"
             }
             
-            self.navigationController?.pushViewController(webVC, animated: true)
+            self.present(webVC, animated: true, completion: nil)
         }
     }
     

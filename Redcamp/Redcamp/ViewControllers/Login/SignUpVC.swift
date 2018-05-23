@@ -226,6 +226,10 @@ class SignUpVC: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPick
         
         // Do any additional setup after loading the view.
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -438,10 +442,17 @@ class SignUpVC: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPick
         // Pass the selected object to the new view controller.
     }
     */
-    @IBAction func rememberMe(_ sender: Any) {
+    @IBAction func rememberMe(_ sender: Any)
+    {
+        
     }
     
-    
+    @IBAction func showTermsAndconditions(_ sender: Any)
+    {
+        let webVC = self.storyboard?.instantiateViewController(withIdentifier: "WebVC") as! WebVC
+        webVC.currentURL = "https://www.np.edu.sg/Pages/diplomas.aspx"
+        self.present(webVC, animated: true, completion: nil)
+    }
     @IBAction func signUpDetails(_ sender: UIButton) {
         print("Sign Up ")
         getStudentDetails()

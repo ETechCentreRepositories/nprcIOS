@@ -218,6 +218,9 @@ class SignUpSocial: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UI
         // Do any additional setup after loading the view.
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -421,6 +424,12 @@ class SignUpSocial: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UI
     @IBAction func rememberMe(_ sender: Any) {
     }
     
+    @IBAction func showTermsAndconditions(_ sender: Any)
+    {
+        let webVC = self.storyboard?.instantiateViewController(withIdentifier: "WebVC") as! WebVC
+        webVC.currentURL = "https://www.np.edu.sg/Pages/diplomas.aspx"
+        self.navigationController?.pushViewController(webVC, animated: true)
+    }
     
     @IBAction func signUpDetails(_ sender: UIButton) {
         print("Sign Up ")

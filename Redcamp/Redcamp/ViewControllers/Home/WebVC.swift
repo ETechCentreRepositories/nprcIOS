@@ -31,7 +31,11 @@ class WebVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func backAction(_ sender: Any)
+    {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

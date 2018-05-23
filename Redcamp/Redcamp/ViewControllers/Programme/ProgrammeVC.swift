@@ -52,6 +52,9 @@ class ProgrammeVC: UIViewController,UITableViewDelegate,UITableViewDataSource
         arrScheduleDay = arrScheduleDay1
     }
 
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
