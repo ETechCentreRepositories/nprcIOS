@@ -428,7 +428,7 @@ class SignUpSocial: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UI
     {
         let webVC = self.storyboard?.instantiateViewController(withIdentifier: "WebVC") as! WebVC
         webVC.currentURL = "https://www.np.edu.sg/Pages/diplomas.aspx"
-        self.navigationController?.pushViewController(webVC, animated: true)
+        self.present(webVC, animated: true, completion: nil)
     }
     
     @IBAction func signUpDetails(_ sender: UIButton) {
