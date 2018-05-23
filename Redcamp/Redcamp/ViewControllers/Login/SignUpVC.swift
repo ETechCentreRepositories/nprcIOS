@@ -337,7 +337,8 @@ class SignUpVC: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPick
         txtBirthDate.inputView = datePicker
         
     }
-    @objc func donePressed(){
+    @objc func donePressed()
+    {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .none
@@ -363,7 +364,8 @@ class SignUpVC: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPick
     }
     
     
-    func createPickerView(){
+    func createPickerView()
+    {
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
 
@@ -377,7 +379,8 @@ class SignUpVC: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPick
         txtSecSchool.inputView = thePicker
     }
     
-    @objc func savePressed(){
+    @objc func savePressed()
+    {
         print("Selected Value")
         txtDietryReq.resignFirstResponder()
         txtSecSchool.resignFirstResponder()
@@ -444,7 +447,7 @@ class SignUpVC: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPick
     */
     @IBAction func rememberMe(_ sender: Any)
     {
-        
+        //-----
     }
     
     @IBAction func showTermsAndconditions(_ sender: Any)
@@ -687,7 +690,8 @@ class SignUpVC: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPick
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
 
-        if (pickerTag == "diet"){
+        if (pickerTag == "diet")
+        {
             txtDietryReq.text = diet[row]
         }else if (pickerTag == "school"){
             txtSecSchool.text = school[row]
