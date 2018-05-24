@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3j5-Y5-kBl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3j5-Y5-kBl">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Quicksand-Regular.ttf">
-            <string>Quicksand-Regular</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--WelcomeVC-->
         <scene sceneID="cB0-FP-N8J">
@@ -722,7 +717,6 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                             <constraint firstItem="Ifw-zq-jfN" firstAttribute="centerX" secondItem="fQL-nj-IWz" secondAttribute="centerX" id="DUe-QM-CMC"/>
                             <constraint firstItem="yZ1-PV-x8I" firstAttribute="trailing" secondItem="Cfw-XN-aTe" secondAttribute="trailing" id="GxW-KK-xL4"/>
                             <constraint firstItem="Ifw-zq-jfN" firstAttribute="centerY" secondItem="2fu-8w-dZW" secondAttribute="centerY" id="Lgb-lR-fFy"/>
-                            <constraint firstItem="ZkT-LS-SYA" firstAttribute="bottom" secondItem="Cfw-XN-aTe" secondAttribute="bottom" id="Voo-yy-cZk"/>
                             <constraint firstItem="Ifw-zq-jfN" firstAttribute="leading" secondItem="Cfw-XN-aTe" secondAttribute="leading" constant="10" id="XUj-1x-xck"/>
                             <constraint firstItem="fQL-nj-IWz" firstAttribute="bottom" secondItem="a94-1r-dfL" secondAttribute="bottom" id="YJI-3b-D4R"/>
                             <constraint firstItem="yZ1-PV-x8I" firstAttribute="top" secondItem="2fu-8w-dZW" secondAttribute="bottom" id="ZWy-5m-3MK"/>
@@ -734,6 +728,7 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                             <constraint firstItem="QCb-7t-nM4" firstAttribute="height" secondItem="Cfw-XN-aTe" secondAttribute="height" id="oKN-SK-U6s"/>
                             <constraint firstItem="Cfw-XN-aTe" firstAttribute="bottom" secondItem="yZ1-PV-x8I" secondAttribute="bottom" id="wL8-Ar-rgj"/>
                             <constraint firstAttribute="trailing" secondItem="fQL-nj-IWz" secondAttribute="trailing" id="xLw-jC-bp3"/>
+                            <constraint firstAttribute="bottom" secondItem="ZkT-LS-SYA" secondAttribute="bottom" id="xOk-yN-fvv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Cfw-XN-aTe"/>
                     </view>

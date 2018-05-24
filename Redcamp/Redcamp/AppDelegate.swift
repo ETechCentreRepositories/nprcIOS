@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     {
         
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-        GIDSignIn.sharedInstance().clientID = "495950529646-kg0p4ho634uu70l8296i2aid8ia607ct.apps.googleusercontent.com"
+        GIDSignIn.sharedInstance().clientID = "495950529646-o94q1jvnpc1puonvnvuhkhq7jnp7v6js.apps.googleusercontent.com"
         //GIDSignIn.sharedInstance().delegate = self
         
         // Override point for customization after application launch.

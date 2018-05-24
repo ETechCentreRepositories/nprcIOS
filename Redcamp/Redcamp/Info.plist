@@ -11,7 +11,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>$(PRODUCT_NAME)</string>
+	<string>RED Camp</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
@@ -29,7 +29,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.495950529646-kg0p4ho634uu70l8296i2aid8ia607ct</string>
+				<string>com.googleusercontent.apps.495950529646-o94q1jvnpc1puonvnvuhkhq7jnp7v6js</string>
 			</array>
 		</dict>
 	</array>

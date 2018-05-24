@@ -427,7 +427,7 @@ class SignUpSocial: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UI
     @IBAction func showTermsAndconditions(_ sender: Any)
     {
         let webVC = self.storyboard?.instantiateViewController(withIdentifier: "WebVC") as! WebVC
-        webVC.currentURL = "https://www.np.edu.sg/Pages/diplomas.aspx"
+        webVC.currentURL = "https://www.np.edu.sg/Pages/terms.aspx"
         self.present(webVC, animated: true, completion: nil)
     }
     

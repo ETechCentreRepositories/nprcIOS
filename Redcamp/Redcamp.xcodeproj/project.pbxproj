@@ -50,6 +50,8 @@
 
 /* Begin PBXFileReference section */
 		22A3B526BCEFF8CFD2ED6014 /* Pods-Redcamp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Redcamp.release.xcconfig"; path = "Pods/Target Support Files/Pods-Redcamp/Pods-Redcamp.release.xcconfig"; sourceTree = "<group>"; };
+		48154CA220B65C1600AA2477 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
+		48154CA320B65C1600AA2477 /* iTunesArtwork@2x */ = {isa = PBXFileReference; lastKnownFileType = file; path = "iTunesArtwork@2x"; sourceTree = "<group>"; };
 		48228F5520AEAE41007CFF7D /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		48228F5720AEAE54007CFF7D /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		48228F5920AEAE61007CFF7D /* TesseractOCR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TesseractOCR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -168,6 +170,8 @@
 				7CBB720320A290ED001476E9 /* Main.storyboard */,
 				7CBB720620A290ED001476E9 /* Assets.xcassets */,
 				7CBB720820A290ED001476E9 /* LaunchScreen.storyboard */,
+				48154CA220B65C1600AA2477 /* iTunesArtwork */,
+				48154CA320B65C1600AA2477 /* iTunesArtwork@2x */,
 				7CBB720B20A290ED001476E9 /* Info.plist */,
 				7CBB721A20A2E30A001476E9 /* Text-Box-Frame-PNG-Photo@3x.png */,
 				48228F6720B01A89007CFF7D /* spartan.png */,
@@ -288,7 +292,7 @@
 				TargetAttributes = {
 					7CBB71FB20A290EC001476E9 = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.Keychain = {
 								enabled = 1;
@@ -573,8 +577,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Redcamp/Redcamp.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2X8GU4BVVX;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = VA2L5B3Y3L;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -584,8 +589,10 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sg.edu.np.Redcamp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "e73f1241-3ac5-4c83-991c-ddb1a12ac326";
+				PROVISIONING_PROFILE_SPECIFIER = REDCamp;
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -595,8 +602,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Redcamp/Redcamp.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2X8GU4BVVX;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = VA2L5B3Y3L;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -606,8 +614,10 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sg.edu.np.Redcamp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "e73f1241-3ac5-4c83-991c-ddb1a12ac326";
+				PROVISIONING_PROFILE_SPECIFIER = REDCamp;
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
