@@ -239,7 +239,7 @@ class SignUpSocial: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UI
         txtSecSchool.setCustomBorder()
         txtContact.setCustomBorder()
         
-        txtFirstName.attributedPlaceholder = NSAttributedString(string: " Full Name",
+        txtFirstName.attributedPlaceholder = NSAttributedString(string: " Full Name (as in NRIC)",
                                                                 attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
         txtnric.attributedPlaceholder = NSAttributedString(string: " NRIC (XXXXX)",
                                                            attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])

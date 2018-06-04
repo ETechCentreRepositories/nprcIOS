@@ -259,7 +259,7 @@ class SignUpVC: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPick
                                                             attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
         txtEmail.attributedPlaceholder = NSAttributedString(string: " Email",
                                                             attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
-        txtFirstName.attributedPlaceholder = NSAttributedString(string: " Full Name",
+        txtFirstName.attributedPlaceholder = NSAttributedString(string: " Full Name (as in NRIC)",
                                                             attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
         txtnric.attributedPlaceholder = NSAttributedString(string: " NRIC (XXXXX)",
                                                                 attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
@@ -458,48 +458,73 @@ class SignUpVC: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPick
     }
     @IBAction func signUpDetails(_ sender: UIButton) {
         print("Sign Up ")
-        getStudentDetails()
-        
-        let URL_USER_REGISTER = "http://ehostingcentre.com/redcampadmin/API/addUsers.php"
-        let parameters: Parameters=[
-            "name":firstName,
-            "email":email_id,
-            "nric":nric,
-            "dob":dob,
-            "mobile":mobile,
-            "school":secSchool,
-            "diet":dietSelected,
-            "password":password,
-            "statuses_id":status,
-            "method":"normal"
-        ]
-        print("Sign up method back ")
-        Alamofire.request(URL_USER_REGISTER, method: .post, parameters: parameters).responseJSON
-            {
-                
-                response in
-                print("Request \(parameters)")
-                print(response)
-                if response.result.isSuccess{
-                    if let json = response.result.value {
-                        let result = json as? [String:AnyObject]
-                        if result!["status"] as? Int == 200{
-                           
-                            let alert = UIAlertController(title: String(describing: result!["display_title"]!), message: String(describing: result!["display_message"]!), preferredStyle: UIAlertControllerStyle.alert)
-                            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default , handler: { (success) in
+        if getStudentDetails() {
+            let URL_USER_REGISTER = "http://ehostingcentre.com/redcampadmin/API/addUsers.php"
+            let parameters: Parameters=[
+                "name":firstName,
+                "email":email_id,
+                "nric":nric,
+                "dob":dob,
+                "mobile":mobile,
+                "school":secSchool,
+                "diet":dietSelected,
+                "password":password,
+                "statuses_id":status,
+                "method":"normal"
+            ]
+            print("Sign up method back ")
+            Alamofire.request(URL_USER_REGISTER, method: .post, parameters: parameters).responseJSON
+                {
+                    
+                    response in
+                    print("Request \(parameters)")
+                    print(response)
+                    if response.result.isSuccess{
+                        if let json = response.result.value {
+                            let result = json as? [String:AnyObject]
+                            if result!["status"] as? Int == 200{
                                 
-                                let LoginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
-                                self.present(LoginVC, animated: true, completion: nil)
-                            }) )
-                            self.present(alert, animated: true, completion: nil)
-                            
-                        }else{
-                            print("Error Signing please contact the App provider.")
-                            return
+                                let alert = UIAlertController(title: String(describing: result!["display_title"]!), message: String(describing: result!["display_message"]!), preferredStyle: UIAlertControllerStyle.alert)
+                                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default , handler: { (success) in
+                                    
+                                    if result!["display_title"]! as! String == "Welcome to Red Camp!"{
+
+                                        //Home page landing
+                                        let result = self.doCodable(inputData: response.data!, inputAdress: "login")
+                                        let userDetails = result as! [UserDetails]
+                                        print(userDetails[0])
+                                        
+                                        UserDefaults.standard.set(userDetails[0].name, forKey: "name")
+                                        UserDefaults.standard.set(userDetails[0].email, forKey: "email")
+                                        UserDefaults.standard.set(userDetails[0].dob, forKey: "dob")
+                                        UserDefaults.standard.set(userDetails[0].mobile, forKey: "mobile")
+                                        
+                                        UserDefaults.standard.set("1", forKey: "loginStatus")
+                                        UserDefaults.standard.synchronize()
+                                        let homeVC = self.storyboard?.instantiateViewController(withIdentifier: "MyNavigationController") as! MyNavigationController
+                                        self.present(homeVC, animated: true, completion: nil)
+                                        
+                                    }else {
+                                        let LoginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+                                        self.present(LoginVC, animated: true, completion: nil)
+                                    }
+                                    
+                                    
+                                }) )
+                                self.present(alert, animated: true, completion: nil)
+                                
+                            }else{
+                                print("Error Signing please contact the App provider.")
+                                return
+                            }
                         }
                     }
-                }
+            }
+        }else{
+            print("Dont go ahead")
         }
+        
+
     }
     
     @IBAction func termsAggrement(_ sender: UIButton) {
@@ -512,59 +537,103 @@ class SignUpVC: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPick
         }
     }
     
-    func getStudentDetails(){
+    func getStudentDetails() -> Bool{
         print("getStudentsDetails ")
         if !txtFirstName.text!.isEmpty{
             firstName = txtFirstName.text!
         }else{
-            alertMessage(alertTitle: "Name", alertMessage: "Name cannot be empty")
+            alertMessage(alertTitle: "Full Name ", alertMessage: "Name cannot be empty")
+            return false
         }
         
         if !txtEmail.text!.isEmpty{
             email_id = txtEmail.text!
         }else{
             alertMessage(alertTitle: "Email", alertMessage: "Email cannot be empty")
+            return false
         }
         
         if !txtnric.text!.isEmpty{
             nric = txtnric.text!
         }else{
             alertMessage(alertTitle: "NRIC", alertMessage: "NRIC cannot be empty")
+            return false
         }
+        print("COUNT NRIC :: \(txtnric.text!.count)")
+        print("COUNT CONTACT :: \(txtnric.text!.count)")
+        if txtnric.text!.count != 5{
+            print("COUNT :: \(txtnric.text!.count)")
+            alertMessage(alertTitle: "NRIC", alertMessage: "Please enter LAST 4 number and 1 character")
+            return false
+        }
+        if txtContact.text!.count != 8{
+            print("COUNT :: \(txtnric.text!.count)")
+            alertMessage(alertTitle: "Contact Number", alertMessage: "Please enter your correct contact number")
+            return false
+        }
+        
         if !txtBirthDate.text!.isEmpty{
             //dob = txtBirthDate.text!
         }else{
             alertMessage(alertTitle: "Date of Birth", alertMessage: "Date of Birth cannot be empty")
+            return false
         }
         
         if !txtContact.text!.isEmpty{
             mobile = txtContact.text!
         }else{
             alertMessage(alertTitle: "Contact Number", alertMessage: "Contact Number cannot be empty.")
+            return false
         }
         
         if !txtSecSchool.text!.isEmpty{
             secSchool = txtSecSchool.text!
         }else{
-            alertMessage(alertTitle: "Secondary School", alertMessage: "Secondary School cannot be empty.")
+            alertMessage(alertTitle: "* Secondary School", alertMessage: "Secondary School cannot be empty.")
+            return false
         }
         
         if !txtDietryReq.text!.isEmpty{
             dietSelected = txtDietryReq.text!
         }else{
-            alertMessage(alertTitle: "Diet", alertMessage: "Please select diet.")
+            alertMessage(alertTitle: "* Dietry Requirements", alertMessage: "Please select diet.")
+            return false
         }
         
         if txtPassword.text! != txtConfirmPassword.text!{
              alertMessage(alertTitle: "Password", alertMessage: "Password and Confirm Password doesn't match")
+            return false
         }else{
             if !txtPassword.text!.isEmpty{
                 password = txtPassword.text!
             }else{
                 alertMessage(alertTitle: "Password", alertMessage: "Password cannot be empty.")
+                return false
             }
         }
-        
+        return true
+    }
+    
+    func doCodable(inputData : Data, inputAdress: String) -> Any{
+        do {
+            
+            switch inputAdress
+            {
+                
+            case APIaddress.login.rawValue:
+                let decodedData =  try JSONDecoder().decode(ResponseCatagopry.self, from: inputData)
+                let result = decodedData.users
+                return result
+            default:
+                print("")
+                return ""
+            }
+            
+        } catch let jsonerr
+        {
+            print(jsonerr)
+            return ""
+        }
     }
     
     func alertMessage(alertTitle: String , alertMessage: String){
@@ -702,3 +771,5 @@ class SignUpVC: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPick
         }
     }
 }
+
+

@@ -79,7 +79,7 @@ class HomeVC: UIViewController,ENSideMenuDelegate,UICollectionViewDelegate,UICol
     
     @IBAction func share(_ sender: UIBarButtonItem) {
         // text to share
-        let text = "Download the RedCamp app from the link\n http://www.np.edu.sg/redcamp"
+        let text = "I'm in for the MOST LIT Camp for O-levelers!\nJoin me at RED CAMP 15!\n\nDownload the RED CAMP App now to register!\nhttps://www.np.edu.sg/redcamp/Pages/default.aspx#register"
         
         // set up activity view controller
         let textToShare = [ text ]
