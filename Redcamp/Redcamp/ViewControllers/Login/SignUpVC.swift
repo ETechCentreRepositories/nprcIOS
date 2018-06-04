@@ -600,6 +600,13 @@ class SignUpVC: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPick
             return false
         }
         
+        if terms{
+            terms == true
+        }else{
+            alertMessage(alertTitle: "Terms and Conditions ", alertMessage: "Please accept terms and conditions to complete registration.")
+            return false
+        }
+        
         if txtPassword.text! != txtConfirmPassword.text!{
              alertMessage(alertTitle: "Password", alertMessage: "Password and Confirm Password doesn't match")
             return false

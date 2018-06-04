@@ -529,6 +529,8 @@ class SignUpSocial: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UI
             alertMessage(alertTitle: "Diet", alertMessage: "Please select diet.")
         }
         
+        
+        
         /*if txtPassword.text! != txtConfirmPassword.text!{
             alertMessage(alertTitle: "Password", alertMessage: "Password and Confirm Password doesn't match")
         }else{
