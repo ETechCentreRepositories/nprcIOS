@@ -130,7 +130,7 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                                 <rect key="frame" x="0.0" y="233" width="375" height="187"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rHh-nz-cMO">
-                                        <rect key="frame" x="38" y="27" width="300" height="40"/>
+                                        <rect key="frame" x="38" y="26.5" width="300" height="40"/>
                                         <color key="backgroundColor" red="0.24705882352941178" green="0.29411764705882354" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="xaX-XT-9T8"/>
@@ -141,7 +141,7 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WrX-Tx-lB6">
-                                        <rect key="frame" x="38" y="75" width="300" height="40"/>
+                                        <rect key="frame" x="38" y="74.5" width="300" height="40"/>
                                         <color key="backgroundColor" red="0.90196078430000004" green="0.1647058824" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
                                         <state key="normal" title="REGISTER WITH GOOGLE">
@@ -152,7 +152,7 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R01-FF-aQz">
-                                        <rect key="frame" x="38" y="123" width="300" height="40"/>
+                                        <rect key="frame" x="38" y="122.5" width="300" height="40"/>
                                         <color key="backgroundColor" red="0.45490196078431372" green="0.70588235294117641" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
                                         <state key="normal" title="CREATE ACCOUNT">
@@ -179,10 +179,10 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qLr-gv-Ddn">
-                                <rect key="frame" x="0.0" y="199" width="375" height="33.5"/>
+                                <rect key="frame" x="0.0" y="199.5" width="375" height="33.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CREATE ACCOUNT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EMa-yW-T5w">
-                                        <rect key="frame" x="91.5" y="4" width="192.5" height="25.5"/>
+                                        <rect key="frame" x="91.5" y="4.5" width="192.5" height="25.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="21"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -195,10 +195,10 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7iJ-AS-6Za">
-                                <rect key="frame" x="0.0" y="420" width="375" height="33.5"/>
+                                <rect key="frame" x="0.0" y="420" width="375" height="33"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOGIN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOF-ZC-un0">
-                                        <rect key="frame" x="155" y="4" width="65.5" height="25.5"/>
+                                        <rect key="frame" x="155" y="4" width="65.5" height="25"/>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="21"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -212,7 +212,7 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w4f-EG-9eo">
-                                <rect key="frame" x="37" y="463.5" width="300" height="40"/>
+                                <rect key="frame" x="37" y="463" width="300" height="40"/>
                                 <color key="backgroundColor" red="0.90196078430000004" green="0.1647058824" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
                                 <state key="normal" title="LOGIN">
@@ -223,7 +223,7 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J3C-5E-d6F">
-                                <rect key="frame" x="37" y="518.5" width="144" height="40"/>
+                                <rect key="frame" x="37" y="518" width="144" height="40"/>
                                 <color key="backgroundColor" red="0.31447967886924744" green="0.40945923328399658" blue="0.98312407732009888" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
                                 <state key="normal" title="FACEBOOK">
@@ -231,7 +231,7 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SAm-ne-Nfr">
-                                <rect key="frame" x="193" y="518.5" width="144" height="40"/>
+                                <rect key="frame" x="193" y="518" width="144" height="40"/>
                                 <color key="backgroundColor" red="0.90196078430000004" green="0.1647058824" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
                                 <state key="normal" title="GOOGLE">
