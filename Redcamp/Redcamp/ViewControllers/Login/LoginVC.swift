@@ -155,7 +155,7 @@ class LoginVC: UIViewController,GIDSignInDelegate,GIDSignInUIDelegate {
                             
                             UserDefaults.standard.set("1", forKey: "loginStatus")
                             UserDefaults.standard.synchronize()
-                            
+                                
                             print("METHOD TYPE ::\(resultss!["method"] as? String)")
                             print("TYPE \(Type)")
                             

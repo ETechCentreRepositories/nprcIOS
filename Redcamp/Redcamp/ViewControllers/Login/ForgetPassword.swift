@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class ForgetPassword: UIViewController {
 
@@ -15,7 +16,8 @@ class ForgetPassword: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        emailID.attributedPlaceholder = NSAttributedString(string: " Email Address",
+                                                              attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
         // Do any additional setup after loading the view.
     }
 
@@ -26,16 +28,57 @@ class ForgetPassword: UIViewController {
     
     @IBAction func resetPassword(_ sender: UIButton) {
         
+        if (emailID.text?.isEmpty)!{
+            let alert = UIAlertController(title: "Forget Password", message:"Email address cannot be emplty" , preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            
+        }else{
+            let parameters: Parameters=[
+                "email":emailID.text!,//"bryanlowsk@gmail.com",//txtEmail.text!,
+            ]
+            let URL_USER_REGISTER = "http://ehostingcentre.com/redcampadmin/API/forgetPassword.php"
+            Alamofire.request(URL_USER_REGISTER, method: .post, parameters: parameters).responseJSON
+                {
+                    response in
+                    //printing response
+                    print("Result :: \(response)")
+                    if response.result.isSuccess{
+                        if let json = response.result.value {
+                            let result = json as? [String:AnyObject]
+                            
+                            let alert = UIAlertController(title: "Password Reset", message: String(describing: result!["message"]!), preferredStyle: UIAlertControllerStyle.alert)
+                            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                            self.present(alert, animated: true, completion: nil)
+                            
+                            
+                            let LoginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+                            self.present(LoginVC, animated: true, completion: nil)
+
+                            
+//                            if result!["status"] as? Int == 200{
+//                                print("STATUS Success")
+//
+//
+//                            }else{
+//
+//
+//                            }
+                        }
+                    }
+            }
+        }
+        
+       
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func backButton(_ sender: UIButton) {
+        if let nav = self.navigationController {
+            nav.popViewController(animated: true)
+        } else {
+            self.dismiss(animated: true, completion: nil)
+        }
     }
-    */
-
+    
+    
 }

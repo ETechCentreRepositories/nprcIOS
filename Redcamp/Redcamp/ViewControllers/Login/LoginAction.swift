@@ -147,7 +147,7 @@ class LoginAction: UIViewController,UITextFieldDelegate {
     }
     
     @IBAction func forgetpass(_ sender: UIButton) {
-//        let alert = UIAlertController(title: "Forgot Passwrod", message: "Please email redcamp@np.edu.sg with your new password and we'll take it from there !", preferredStyle: UIAlertControllerStyle.alert)
+//        let alert = UIAlertController(title: "Forgot Password", message: "Please email redcamp@np.edu.sg with your new password and we'll take it from there !", preferredStyle: UIAlertControllerStyle.alert)
 //        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
 //        self.present(alert, animated: true, completion: nil)
         let ForgetPasswordVC = self.storyboard?.instantiateViewController(withIdentifier: "ForgetPassword") as! ForgetPassword
@@ -197,7 +197,7 @@ class LoginAction: UIViewController,UITextFieldDelegate {
                             self.present(homeVC, animated: true, completion: nil)
                             
                         }else{
-                            let alert = UIAlertController(title: "Wrong Passwrod", message: "Username and Password is incorrect.", preferredStyle: UIAlertControllerStyle.alert)
+                            let alert = UIAlertController(title: String(describing: result!["display_title"]!), message: String(describing: result!["display_message"]!), preferredStyle: UIAlertControllerStyle.alert)
                             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
                             self.present(alert, animated: true, completion: nil)
                             

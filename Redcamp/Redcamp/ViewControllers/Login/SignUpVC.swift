@@ -214,8 +214,7 @@ class SignUpVC: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPick
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print("OCR :: \(OCR)")
+
         
         createPickerView()
         createDatePicker()
@@ -433,22 +432,7 @@ class SignUpVC: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPick
             debugPrint("We're about to hide the keyboard and the keyboard size is nil. Now is the rapture.")
         }
     }
-    
-    
-    
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    @IBAction func rememberMe(_ sender: Any)
-    {
-        //-----
-    }
     
     @IBAction func showTermsAndconditions(_ sender: Any)
     {
@@ -530,10 +514,10 @@ class SignUpVC: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPick
     @IBAction func termsAggrement(_ sender: UIButton) {
         if terms == true{
             terms = false
-            termsCheckBox.setImage(#imageLiteral(resourceName: "tick"), for: .normal)
+            termsCheckBox.setImage(nil, for: .normal)
         }else{
             terms = true
-            termsCheckBox.setImage(nil, for: .normal)
+            termsCheckBox.setImage(#imageLiteral(resourceName: "tick"), for: .normal)
         }
     }
     
@@ -542,7 +526,7 @@ class SignUpVC: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPick
         if !txtFirstName.text!.isEmpty{
             firstName = txtFirstName.text!
         }else{
-            alertMessage(alertTitle: "Full Name ", alertMessage: "Name cannot be empty")
+            alertMessage(alertTitle: "Name ", alertMessage: "Name cannot be empty")
             return false
         }
         
@@ -559,18 +543,6 @@ class SignUpVC: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPick
             alertMessage(alertTitle: "NRIC", alertMessage: "NRIC cannot be empty")
             return false
         }
-        print("COUNT NRIC :: \(txtnric.text!.count)")
-        print("COUNT CONTACT :: \(txtnric.text!.count)")
-        if txtnric.text!.count != 5{
-            print("COUNT :: \(txtnric.text!.count)")
-            alertMessage(alertTitle: "NRIC", alertMessage: "Please enter LAST 4 number and 1 character")
-            return false
-        }
-        if txtContact.text!.count != 8{
-            print("COUNT :: \(txtnric.text!.count)")
-            alertMessage(alertTitle: "Contact Number", alertMessage: "Please enter your correct contact number")
-            return false
-        }
         
         if !txtBirthDate.text!.isEmpty{
             //dob = txtBirthDate.text!
@@ -578,7 +550,11 @@ class SignUpVC: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPick
             alertMessage(alertTitle: "Date of Birth", alertMessage: "Date of Birth cannot be empty")
             return false
         }
-        
+        if txtnric.text!.count != 5{
+            print("COUNT :: \(txtnric.text!.count)")
+            alertMessage(alertTitle: "NRIC", alertMessage: "Please enter LAST 4 number and 1 character")
+            return false
+        }
         if !txtContact.text!.isEmpty{
             mobile = txtContact.text!
         }else{
@@ -597,11 +573,11 @@ class SignUpVC: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPick
             dietSelected = txtDietryReq.text!
         }else{
             alertMessage(alertTitle: "* Dietry Requirements", alertMessage: "Please select diet.")
-            return false
+                return false
         }
         
         if terms{
-            terms == true
+            terms = true
         }else{
             alertMessage(alertTitle: "Terms and Conditions ", alertMessage: "Please accept terms and conditions to complete registration.")
             return false

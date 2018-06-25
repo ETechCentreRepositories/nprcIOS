@@ -573,8 +573,7 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                                                             <constraint firstAttribute="height" constant="24" id="uh3-xi-5c2"/>
                                                         </constraints>
                                                         <connections>
-                                                            <action selector="rememberMe:" destination="jBy-OE-FrT" eventType="touchUpInside" id="5Yd-rn-aXq"/>
-                                                            <action selector="termsAggrement:" destination="jBy-OE-FrT" eventType="touchUpInside" id="kQo-db-gSc"/>
+                                                            <action selector="termsAggrement:" destination="Cxg-h6-hfA" eventType="touchUpInside" id="CRm-8l-dZf"/>
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I have read and agree to the Terms of Use and Privacy Policy." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eKI-vz-wRh">
@@ -735,6 +734,7 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                         <outlet property="btnSignUp" destination="ixw-Ji-68l" id="5tD-YL-2Th"/>
                         <outlet property="constPickBottom" destination="YJI-3b-D4R" id="ydU-Cn-RYI"/>
                         <outlet property="scrollSignUp" destination="yZ1-PV-x8I" id="zoB-p9-k7s"/>
+                        <outlet property="termsCheckBox" destination="tXM-wT-4U7" id="kNb-1M-meb"/>
                         <outlet property="txtBirthDate" destination="l8x-ri-4Lz" id="Nel-Pz-zO3"/>
                         <outlet property="txtContact" destination="CuC-SS-qAY" id="pK6-s1-RtG"/>
                         <outlet property="txtDietryReq" destination="uau-HK-fD2" id="x1Y-oN-jp0"/>
@@ -945,7 +945,6 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                                                             <constraint firstAttribute="height" constant="24" id="hCK-Op-hcc"/>
                                                         </constraints>
                                                         <connections>
-                                                            <action selector="rememberMe:" destination="jBy-OE-FrT" eventType="touchUpInside" id="F5f-nc-y0t"/>
                                                             <action selector="termsAggrement:" destination="jBy-OE-FrT" eventType="touchUpInside" id="Whe-j9-XY7"/>
                                                         </connections>
                                                     </button>
@@ -1649,7 +1648,7 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="backAction:" destination="aV2-Kz-QBY" eventType="touchUpInside" id="4jH-FK-5hl"/>
+                                    <action selector="backButton:" destination="aV2-Kz-QBY" eventType="touchUpInside" id="Cz0-7J-1fr"/>
                                 </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6P2-vh-mEo">
@@ -1685,8 +1684,8 @@ Register for RED camp here and get updates and other fun stuff all from your pho
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lyP-qR-JVX">
                                                 <rect key="frame" x="0.0" y="218" width="375" height="231"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9j5-X4-wHX">
-                                                        <rect key="frame" x="38" y="17" width="300" height="35"/>
+                                                    <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9j5-X4-wHX">
+                                                        <rect key="frame" x="38" y="17" width="315" height="35"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="35" id="9rg-AR-13C"/>
                                                         </constraints>
