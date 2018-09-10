@@ -443,7 +443,7 @@ class SignUpVC: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPick
     @IBAction func signUpDetails(_ sender: UIButton) {
         print("Sign Up ")
         if getStudentDetails() {
-            let URL_USER_REGISTER = "http://ehostingcentre.com/redcampadmin/API/addUsers.php"
+            let URL_USER_REGISTER = "https://www1dev.np.edu.sg/npnet/MobileApiRedcamp/api/RegisteredUser/userRegister"
             let parameters: Parameters=[
                 "name":firstName,
                 "email":email_id,

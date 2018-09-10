@@ -130,10 +130,10 @@ class LoginVC: UIViewController,GIDSignInDelegate,GIDSignInUIDelegate {
         var Success = false
         let parameters: Parameters=[
             "email":Email,//"bryanlowsk@gmail.com",//txtEmail.text!,
-            "password":"",//"Bryan987",//txtPassword.text!
+            "password":"",//txtPassword.text!,
             "type":Type
         ]
-        let URL_USER_REGISTER = "http://ehostingcentre.com/redcampadmin/API/login.php"
+        let URL_USER_REGISTER = "https://www1dev.np.edu.sg/npnet/MobileApiRedcamp/api/login/get"
         Alamofire.request(URL_USER_REGISTER, method: .post, parameters: parameters).responseJSON
             {
                 response in

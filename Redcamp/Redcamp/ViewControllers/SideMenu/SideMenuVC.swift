@@ -28,7 +28,7 @@ class SideMenuVC: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     var selectedMenuItem : Int = 0
     
-    let arrSideMenuTitle = ["Email","Phone","Date Of Birth"]
+    let arrSideMenuTitle = ["STRENGTH","ENERGY","XP"]
     var arrSideMenuSubTitle = ["alincelee@gmail.com","+65 9999 8888","01 March 2010"]
     
     let arrSideMenuIcons = ["Spartens@3x.png"]
@@ -61,6 +61,15 @@ class SideMenuVC: UIViewController,UITableViewDelegate,UITableViewDataSource
         imgProfile.layer.borderColor = UIColor.black.cgColor
         imgProfile.layer.cornerRadius = imgProfile.frame.height/2
         imgProfile.clipsToBounds = true
+        
+        let frame = CGRect(x: 0.0, y: 0.0, width: 200.0, height: 10.0)
+        let slider = UISlider(frame: frame)
+        slider.backgroundColor = UIColor.clear
+        slider.minimumValue = 0.0
+        slider.maximumValue = 50.0
+        slider.isContinuous = true
+        slider.value = 25.0
+        view.addSubview(slider)
         
         self.arrSideMenuSubTitle.removeAll()
         
@@ -112,11 +121,11 @@ class SideMenuVC: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
-        return 44.0
+        return 50//44.0
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return arrSideMenuTitle.count + 1
+        return arrSideMenuTitle.count + 5
         
     }
     
@@ -124,6 +133,30 @@ class SideMenuVC: UIViewController,UITableViewDelegate,UITableViewDataSource
     {
         if indexPath.row == 3
         {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SideMenuCell", for: indexPath) as! SideMenuCell
+            cell.contentView.backgroundColor = UIColor.darkGray
+            cell.imgIcon.image = #imageLiteral(resourceName: "notification")
+            cell.lblTitle.text = "Notification"
+            return cell
+        }else if indexPath.row == 4 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SideMenuCell", for: indexPath) as! SideMenuCell
+            cell.contentView.backgroundColor = UIColor.darkGray
+            cell.imgIcon.image = #imageLiteral(resourceName: "parentconcern")
+            cell.lblTitle.text = "Parent Concern"
+            return cell
+        }else if indexPath.row == 5 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SideMenuCell", for: indexPath) as! SideMenuCell
+            cell.contentView.backgroundColor = UIColor.darkGray
+            cell.imgIcon.image = #imageLiteral(resourceName: "todayspoll")
+            cell.lblTitle.text = "Today's Poll"
+            return cell
+        }else if indexPath.row == 6 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SideMenuCell", for: indexPath) as! SideMenuCell
+            cell.contentView.backgroundColor = UIColor.darkGray
+            cell.imgIcon.image = #imageLiteral(resourceName: "QRCode")
+            cell.lblTitle.text = "My QR Code"
+            return cell
+        }else if indexPath.row == 7 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "SideMenuCell", for: indexPath) as! SideMenuCell
             cell.contentView.backgroundColor = UIColor.darkGray
             cell.imgIcon.image = UIImage(named: "logout.png")
@@ -143,15 +176,30 @@ class SideMenuVC: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        if (indexPath.row == 3)
+        if (indexPath.row == 3){
+            let alert = UIAlertController(title: "Notification", message: "This feature will be available once the camp starts.", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }else if (indexPath.row == 4){
+            let alert = UIAlertController(title: "Parent Concern", message: "The Parent Consent Form will be available at a later date.\n\n You will receive a notification to get it signed in order to receive your QR code e-ticket to RED Camp", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }else if (indexPath.row == 5){
+            let alert = UIAlertController(title: "Today's Poll", message: "Check back here at RED Camp Day 1!\nPoll Questions will be available during RED Camp.", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }else if (indexPath.row == 6)
+        {
+            let alert = UIAlertController(title: "My QR Code", message: "Receive your QR code e-ticket to RED Camp when you get the Parent Consent Form signed!", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }else if (indexPath.row == 7)
         {
             UserDefaults.standard.set("0", forKey: "loginStatus")
             UserDefaults.standard.synchronize()
             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let viewController = mainStoryboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
             UIApplication.shared.keyWindow?.rootViewController = viewController
-            
-            //self.view.window!.rootViewController?.dismiss(animated: true, completion: nil)
         }
     }
     

@@ -16,7 +16,15 @@
 		482A33C220AC6A2C00D6A21C /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 482A33BE20AC6A2B00D6A21C /* FBSDKShareKit.framework */; };
 		482A33C320AC6A2C00D6A21C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 482A33BF20AC6A2B00D6A21C /* Bolts.framework */; };
 		482A33C420AC6A2C00D6A21C /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 482A33C020AC6A2C00D6A21C /* FBSDKCoreKit.framework */; };
+		483F22A0213EC220008538F3 /* ParentConsentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483F229F213EC220008538F3 /* ParentConsentController.swift */; };
+		483F22A8213F868E008538F3 /* rc-app-carousels-1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 483F22A4213F8687008538F3 /* rc-app-carousels-1.jpg */; };
+		483F22A9213F868E008538F3 /* rc-app-carousels-3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 483F22A5213F8689008538F3 /* rc-app-carousels-3.jpg */; };
+		483F22AA213F868E008538F3 /* rc-app-carousels-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 483F22A6213F868B008538F3 /* rc-app-carousels-2.jpg */; };
+		483F22AB213F868E008538F3 /* rc-app-carousels-4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 483F22A7213F868C008538F3 /* rc-app-carousels-4.jpg */; };
+		483F22AD21423114008538F3 /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483F22AC21423114008538F3 /* UIImage+Resize.swift */; };
+		483F22AF21423157008538F3 /* AlertController+image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483F22AE21423157008538F3 /* AlertController+image.swift */; };
 		48BC380920B2D6D4007B6079 /* SignUpSocial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BC380820B2D6D4007B6079 /* SignUpSocial.swift */; };
+		48F2F3BF2138F91200DDC912 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48F2F3BE2138F91200DDC912 /* GoogleService-Info.plist */; };
 		7C1E64EB20B2B8580068F202 /* HomeHeader.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C1E64EA20B2B8570068F202 /* HomeHeader.png */; };
 		7C1E64ED20B2B8640068F202 /* in app logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C1E64EC20B2B8620068F202 /* in app logo.png */; };
 		7C1E64F220B2B8750068F202 /* campusexplorer.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C1E64EE20B2B86D0068F202 /* campusexplorer.png */; };
@@ -64,7 +72,15 @@
 		482A33BF20AC6A2B00D6A21C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		482A33C020AC6A2C00D6A21C /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		482A33C520AC703F00D6A21C /* Redcamp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Redcamp.entitlements; sourceTree = "<group>"; };
+		483F229F213EC220008538F3 /* ParentConsentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentConsentController.swift; sourceTree = "<group>"; };
+		483F22A4213F8687008538F3 /* rc-app-carousels-1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "rc-app-carousels-1.jpg"; sourceTree = "<group>"; };
+		483F22A5213F8689008538F3 /* rc-app-carousels-3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "rc-app-carousels-3.jpg"; sourceTree = "<group>"; };
+		483F22A6213F868B008538F3 /* rc-app-carousels-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "rc-app-carousels-2.jpg"; sourceTree = "<group>"; };
+		483F22A7213F868C008538F3 /* rc-app-carousels-4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "rc-app-carousels-4.jpg"; sourceTree = "<group>"; };
+		483F22AC21423114008538F3 /* UIImage+Resize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Resize.swift"; sourceTree = "<group>"; };
+		483F22AE21423157008538F3 /* AlertController+image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlertController+image.swift"; sourceTree = "<group>"; };
 		48BC380820B2D6D4007B6079 /* SignUpSocial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpSocial.swift; sourceTree = "<group>"; };
+		48F2F3BE2138F91200DDC912 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4FB139EAC243CDD236194503 /* Pods-Redcamp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Redcamp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Redcamp/Pods-Redcamp.debug.xcconfig"; sourceTree = "<group>"; };
 		7C1E64EA20B2B8570068F202 /* HomeHeader.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HomeHeader.png; sourceTree = "<group>"; };
 		7C1E64EC20B2B8620068F202 /* in app logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "in app logo.png"; sourceTree = "<group>"; };
@@ -127,6 +143,27 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		483F229E213EC1F5008538F3 /* ParentConsent */ = {
+			isa = PBXGroup;
+			children = (
+				483F229F213EC220008538F3 /* ParentConsentController.swift */,
+				483F22AC21423114008538F3 /* UIImage+Resize.swift */,
+				483F22AE21423157008538F3 /* AlertController+image.swift */,
+			);
+			path = ParentConsent;
+			sourceTree = "<group>";
+		};
+		483F22A3213F854A008538F3 /* home_images */ = {
+			isa = PBXGroup;
+			children = (
+				483F22A4213F8687008538F3 /* rc-app-carousels-1.jpg */,
+				483F22A6213F868B008538F3 /* rc-app-carousels-2.jpg */,
+				483F22A5213F8689008538F3 /* rc-app-carousels-3.jpg */,
+				483F22A7213F868C008538F3 /* rc-app-carousels-4.jpg */,
+			);
+			path = home_images;
+			sourceTree = "<group>";
+		};
 		4F17B53041577A5BEAFDF152 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +201,7 @@
 		7CBB71FE20A290EC001476E9 /* Redcamp */ = {
 			isa = PBXGroup;
 			children = (
+				483F22A3213F854A008538F3 /* home_images */,
 				482A33C520AC703F00D6A21C /* Redcamp.entitlements */,
 				7CBB722220A2EFDA001476E9 /* Custom Classes */,
 				7CBB721220A29738001476E9 /* ViewControllers */,
@@ -175,6 +213,7 @@
 				48154CA220B65C1600AA2477 /* iTunesArtwork */,
 				48154CA320B65C1600AA2477 /* iTunesArtwork@2x */,
 				7CBB720B20A290ED001476E9 /* Info.plist */,
+				48F2F3BE2138F91200DDC912 /* GoogleService-Info.plist */,
 				7CBB721A20A2E30A001476E9 /* Text-Box-Frame-PNG-Photo@3x.png */,
 				48228F6720B01A89007CFF7D /* spartan.png */,
 				7C1E64EA20B2B8570068F202 /* HomeHeader.png */,
@@ -194,6 +233,7 @@
 		7CBB721220A29738001476E9 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				483F229E213EC1F5008538F3 /* ParentConsent */,
 				7CC3CCA320A97BDA00FB8612 /* Welcome */,
 				7CC1760E20A93D1F0074942C /* Programme */,
 				7CBB722520A2F00F001476E9 /* SideMenu */,
@@ -295,9 +335,12 @@
 				TargetAttributes = {
 					7CBB71FB20A290EC001476E9 = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.Keychain = {
+								enabled = 1;
+							};
+							com.apple.Push = {
 								enabled = 1;
 							};
 						};
@@ -327,6 +370,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				483F22A8213F868E008538F3 /* rc-app-carousels-1.jpg in Resources */,
 				7C1E64F320B2B8750068F202 /* pathofdiscovery.png in Resources */,
 				7CBB720A20A290ED001476E9 /* LaunchScreen.storyboard in Resources */,
 				7CBB722120A2EE7A001476E9 /* Spartens@3x.png in Resources */,
@@ -335,12 +379,16 @@
 				7CBB721F20A2E31A001476E9 /* redcamp-spartans copy@3x.png in Resources */,
 				7C1E64EB20B2B8580068F202 /* HomeHeader.png in Resources */,
 				7CBB721B20A2E30A001476E9 /* Text-Box-Frame-PNG-Photo@3x.png in Resources */,
+				483F22AA213F868E008538F3 /* rc-app-carousels-2.jpg in Resources */,
 				7C1E64ED20B2B8640068F202 /* in app logo.png in Resources */,
 				7CBB720720A290ED001476E9 /* Assets.xcassets in Resources */,
 				7C1E64F220B2B8750068F202 /* campusexplorer.png in Resources */,
+				483F22A9213F868E008538F3 /* rc-app-carousels-3.jpg in Resources */,
 				7C5ED8AA20AD2BB7001D2B8F /* logout.png in Resources */,
 				7CBB720520A290ED001476E9 /* Main.storyboard in Resources */,
 				7C1E64F420B2B8750068F202 /* askredcamp.png in Resources */,
+				48F2F3BF2138F91200DDC912 /* GoogleService-Info.plist in Resources */,
+				483F22AB213F868E008538F3 /* rc-app-carousels-4.jpg in Resources */,
 				48228F6820B01A8A007CFF7D /* spartan.png in Resources */,
 				7C1E64F520B2B8750068F202 /* campporgramme.png in Resources */,
 			);
@@ -382,6 +430,8 @@
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -393,6 +443,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -426,8 +478,10 @@
 			files = (
 				7CC3CCAB20A9911400FB8612 /* SignUpVC.swift in Sources */,
 				7CBB720220A290ED001476E9 /* ViewController.swift in Sources */,
+				483F22A0213EC220008538F3 /* ParentConsentController.swift in Sources */,
 				7CBB722420A2EFF1001476E9 /* SideMenuCell.swift in Sources */,
 				7CC1761420A9763C0074942C /* SideMenuCellText.swift in Sources */,
+				483F22AF21423157008538F3 /* AlertController+image.swift in Sources */,
 				7CBB722720A2F0E0001476E9 /* SideMenuVC.swift in Sources */,
 				7CBB721920A2DED8001476E9 /* HomeVC.swift in Sources */,
 				7CBB722920A2F6B6001476E9 /* MyNavigationController.swift in Sources */,
@@ -437,6 +491,7 @@
 				7CC1761220A9457B0074942C /* HomeColCell.swift in Sources */,
 				7CC3CCAD20A995E600FB8612 /* ScanVC.swift in Sources */,
 				7CC3CCA520A97C3000FB8612 /* WelcomeVC.swift in Sources */,
+				483F22AD21423114008538F3 /* UIImage+Resize.swift in Sources */,
 				48245DFC20C52968005EDC6B /* ForgetPassword.swift in Sources */,
 				7CC1761020A93D720074942C /* ProgrammeVC.swift in Sources */,
 				48BC380920B2D6D4007B6079 /* SignUpSocial.swift in Sources */,
@@ -582,7 +637,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Redcamp/Redcamp.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = X24XXKBJ2A;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -592,10 +647,10 @@
 				INFOPLIST_FILE = Redcamp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = sg.edu.np.Redcamp;
+				PRODUCT_BUNDLE_IDENTIFIER = sg.edu.np.Redcampgunjan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "a32a7f64-f7ab-4bce-8983-3cba0b7de229";
+				PROVISIONING_PROFILE_SPECIFIER = Gunjan_Redcamp;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -608,7 +663,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Redcamp/Redcamp.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = X24XXKBJ2A;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -618,10 +673,10 @@
 				INFOPLIST_FILE = Redcamp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = sg.edu.np.Redcamp;
+				PRODUCT_BUNDLE_IDENTIFIER = sg.edu.np.Redcampgunjan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "a32a7f64-f7ab-4bce-8983-3cba0b7de229";
+				PROVISIONING_PROFILE_SPECIFIER = Gunjan_Redcamp;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

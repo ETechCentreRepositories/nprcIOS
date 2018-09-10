@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>1055568493891-fmehik9bo3luippg37p5hf1hrqtupikc.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1055568493891-fmehik9bo3luippg37p5hf1hrqtupikc</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBB9ccQpES0Mc6qGEhddAOrjgZ6sglh6f0</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1055568493891</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>sg.edu.np.Redcampgunjan</string>
+	<key>PROJECT_ID</key>
+	<string>notificationtest-ec2cd</string>
+	<key>STORAGE_BUCKET</key>
+	<string>notificationtest-ec2cd.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1055568493891:ios:ceac94202c9ddf9d</string>
+	<key>DATABASE_URL</key>
+	<string>https://notificationtest-ec2cd.firebaseio.com</string>
+</dict>
+</plist>
